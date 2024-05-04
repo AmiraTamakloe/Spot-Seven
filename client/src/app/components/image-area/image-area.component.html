@@ -1,0 +1,28 @@
+<div class="container" *transloco="let t; read: 'image-area'">
+    <div class="title">
+        <p>{{ imageArea }}</p>
+    </div>
+    <div class="canvas-container">
+        <app-canvas
+            [actionObservable]="imageService.actionImageObservable"
+            [imageArea]="imageArea"
+            [clearOnCreate]="true"
+            class="canvas-back"
+        ></app-canvas>
+        <app-canvas [actionObservable]="paintService.frontImageObservable" [imageArea]="imageArea" class="canvas-front"></app-canvas>
+        <app-canvas
+            [actionObservable]="paintService.tempImageObservable"
+            [imageArea]="imageArea"
+            class="canvas-temp"
+            (mousedown)="paintService.onMouseDown(imageArea, $event)"
+            (mousemove)="paintService.onMouseMove(imageArea, $event)"
+            (mouseleave)="paintService.onMouseLeave(imageArea, $event)"
+        ></app-canvas>
+    </div>
+    <div class="background-controls-container">
+        <app-load-image-button [imageArea]="imageArea"></app-load-image-button>
+        <button class="reset" mat-raised-button (click)="resetBackground()">{{t("Réinitialiser l'arrière plan")}}</button>
+        <button class="reset" mat-raised-button (click)="paintService.clearCanvas(imageArea)">{{t("Réinitialiser l'avant plan")}}</button>
+        <button class="reset" mat-raised-button (click)="paintService.duplicate(imageArea)">{{t("Dupliquer l'avant plan")}}</button>
+    </div>
+</div>

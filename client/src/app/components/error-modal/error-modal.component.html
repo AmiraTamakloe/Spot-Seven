@@ -1,0 +1,9 @@
+<div *transloco="let t; read: 'error-modal'">
+    <h2 class="title" mat-dialog-title>{{t('Erreur')}}</h2>
+    <div class="content" mat-dialog-content>
+        <p>{{t('Une erreur a été rencontrée')}}</p>
+    </div>
+    <div mat-dialog-actions>
+        <app-button (click)="close()">{{t('Retourner au menu principal')}}</app-button>
+    </div>
+</div>

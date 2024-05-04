@@ -1,0 +1,17 @@
+<app-page-base-component>
+    <div class="container" *transloco="let t; read: 'observer-game-session'">
+        <h1>{{t("Mode Observateur: Parties de jeu en cours")}}</h1>
+        <app-button icon="home" class="back-button" routerLink="/home">{{t("PAGE D'ACCUEIL")}}</app-button>
+        <br><br>
+        <div class="game-session-container">
+            @for(observerGameSession of this.observerService.observersGameSessions; track
+            observerGameSession.gameRoomId) {
+            <div class="game-session">
+                <app-observer-game-session [observerGameSession]="observerGameSession"
+                    class="waiting-room"></app-observer-game-session>
+            </div>
+            }
+        </div>
+
+    </div>
+</app-page-base-component>

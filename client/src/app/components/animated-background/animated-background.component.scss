@@ -1,0 +1,48 @@
+// code source inspire de https://alvarotrigo.com/blog/animated-backgrounds-css/
+@keyframes animate {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100% {
+        transform: translateY(-1800px) rotate(760deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+}
+
+.animated-background {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+}
+
+.animated-background li {
+    list-style: none;
+    position: absolute;
+    display: block;
+    background: rgba(255, 255, 255, 0.2);
+    animation: animate 19s linear infinite;
+}
+
+
+@for $i from 0 through 25 {
+    .animated-background li:nth-child(#{$i}) {
+        $randomSize: random(150);
+        $randomPosition : random(1980);
+
+        left: $randomPosition + px;
+        width: $randomSize + 50px;
+        height: $randomSize + 50px;
+        bottom: -200px;
+        animation-delay: random(20) + s;
+    }
+}

@@ -1,0 +1,32 @@
+<app-page-base-component>
+    <div class="container" *transloco="let t; read: 'login-page'">
+        <div class="top-container">
+            <h1 class="title" data-text="SPOT SEVEN">SPOT SEVEN</h1>
+            <h2>{{ t('Connexion') }}</h2>
+        </div>
+        <div class="form-container">
+            <img src="./assets/logo/logo.png" alt="logo" class="logo" />
+            <form class="form-field" [formGroup]="logInForm" (ngSubmit)="onSubmit()">
+                <mat-error *ngIf="incorrectUsernameOrPassword">{{t("Nom d'utilisateur ou mot de passe incorrect")}}</mat-error>
+                <label for="username">{{t("Nom d'utilisateur")}}</label>
+                <input type="text" id="username" name="username" formControlName="username">
+                <label for="password">{{t("Mot de passe")}}</label>
+                <input type="password" id="password" name="password" formControlName="password">
+                <a class="password-reset" href="#">{{t("Mot de passe oublié ?")}}</a>
+                <input type="submit" [value]="t('SE CONNECTER')" [disabled]="!logInForm.valid">
+            </form>
+            <div class="google-signin-container">
+                <div class="text">{{t("Ou se connecter avec")}} :</div>
+                <asl-google-signin-button class="google-button" type='icon' size='medium' shape="circle"></asl-google-signin-button>
+            </div>
+            <div class="social-media">
+            </div>
+            <form class="form-field" routerLink="/create-account">
+                <input type="submit" [value]="t('CRÉER UN COMPTE')">
+            </form>
+        </div>
+    </div>
+    <div class="credits">
+        <p *ngFor="let member of getTeamMembers()">{{ member.name }}</p>
+    </div>
+</app-page-base-component>

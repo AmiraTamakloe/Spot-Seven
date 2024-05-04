@@ -1,0 +1,72 @@
+* {
+  box-sizing: border-box;
+}
+
+nav {
+  top: 0px;
+  left: 30px;
+  width: 95%;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between; /* Align items to left and right */
+  align-items: center;
+  transition: 0.3s ease-out;
+  color: black;
+  font-size: 40px;
+  font-weight: bolder;
+  font-family: Pirata;
+
+  @media (min-width: 640px) {
+    padding: 0px 20px;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+}
+
+span {
+  font-size: 130%;
+  font-weight: bold;
+  font-family: Pirata;
+  text-align: center; 
+}
+
+#left {
+  display: flex;
+  align-items: center;
+}
+
+#right {
+  display: flex;
+  align-items: center;
+}
+
+#chat_button {
+  background: none;
+  border: none;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Pirata';
+  font-size: 22px; 
+}
+
+#chat_button i {
+  pointer-events: none;
+}
+
+#chat_button:hover {
+  scale: 120%;
+}

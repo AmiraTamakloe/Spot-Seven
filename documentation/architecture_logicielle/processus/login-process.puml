@@ -1,0 +1,64 @@
+@startuml
+actor ":Joueur" as player
+box "Client"
+participant ":LoginPage" as loginPage
+participant ":AccountService" as accountService
+end box
+
+
+box "Serveur"
+participant ":AuthenticationController" as authController
+participant ":AuthenticationService" as authService
+participant ":UserService" as userService
+end box
+database ":Base de données" as db
+
+activate loginPage
+player -> loginPage: Se connecte
+loginPage -> accountService: logInAccount(user, password)
+activate accountService
+activate authController
+accountService -> authController: postLoginRequest()
+
+
+authController -> authService: login()
+activate authService
+authService -> authService: connectedUsers.has(user)
+alt user est déjà connecté
+    accountService <-- authService : throwHttpException()
+
+else user n'est pas déjà connecté
+    authService -> userService: isUserPasswordValid(user, password)
+
+    activate userService
+    userService -> db : find(user)
+    activate db
+    userService <-- db: utilisateur
+    deactivate db
+
+    authService <-- userService : Validité user password
+    deactivate userService
+
+    alt user password non valide
+        accountService <-- authService : throwHttpException()
+        loginPage <-- accountService: Erreur mot de passe invalide
+        player <- loginPage : Affiche mot de passe invalide
+
+    else user password valide
+        authService -> authService: setConnectedUser(user)
+        accountService <-- authService : Tokens d'authentification
+        deactivate authService
+        deactivate authController
+
+        accountService -> accountService : saveTokens()
+        loginPage <- accountService : Navigue vers page principale
+        deactivate accountService
+        deactivate loginPage
+
+    end
+end
+
+' else connectedUsers has user
+' authService -> authController: throwHttpException()
+
+@enduml

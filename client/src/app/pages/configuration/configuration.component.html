@@ -1,0 +1,26 @@
+<div [ngClass]="themeService.themeSignal()" class="container-config" *transloco="let t; read: 'configuration'">
+  <app-navbar class="navbar"></app-navbar>
+  <div class="content">
+    <app-game-selection-panel [isConfig]="true" class="game-panel"></app-game-selection-panel>
+    <div class="side">
+      <div class="sidebar">
+
+        <div *ngFor="let constant of getConstantsInDisplayFormat()">
+          <button mat-raised-button class="button" (click)="this.gameConstantsService.updateConstant(constant.key)">
+            {{ constantsName[constant.key] }}: {{ constant.value }}
+          </button>
+        </div>
+        <button mat-raised-button class="button" (click)="deleteAll()">{{t('Supprimer les fiches')}}</button>
+        <button mat-raised-button class="button" (click)="this.gameConstantsService.resetAllConstants()">
+          {{t('Réinitialiser les constantes')}}</button>
+        <button mat-raised-button class="button" (click)="reinitializeAllScores()">{{t('Supprimer les
+          classements')}}</button>
+        <button mat-raised-button class="button" (click)="deleteHistory()">{{t('Supprimer les historiques')}}</button>
+      </div>
+      <app-button class="history-button" (click)="displayHistory()">{{t("REGARDER L'HISTORIQUE DES
+        PARTIES")}}</app-button>
+      <app-button icon="create" class="new-game-button" routerLink="/create-game">{{t('CREER UN NOUVEAU
+        JEU')}}</app-button>
+    </div>
+  </div>
+</div>

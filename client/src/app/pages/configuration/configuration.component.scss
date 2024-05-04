@@ -1,0 +1,83 @@
+.container-config {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    justify-self: center;
+}
+
+.game-panel {
+    width: 95%;
+}
+
+.content {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.side {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 20%;
+    align-items: center;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: 60%;
+    justify-content: space-evenly;
+    border-radius: 20px;
+    align-items: center;
+    align-self: center;
+}
+
+.button {
+    height: fit-content;
+    width: 95%;
+    font-family: Pirata;
+    font-size: 15pt;
+    border-radius: 10pt;
+    color: rgba(255, 255, 255, 1);
+    box-shadow: inset 0px 1px 0px 0px rgba(155, 155, 155, 1);
+    text-shadow: inset 0px 1px 0px rgba(255, 255, 255, 1);
+    background: #274472;
+    margin: 5px;
+}
+
+.button:hover {
+    background: linear-gradient(rgba(25, 89, 148, 1), rgba(65, 114, 159, 1));
+}
+
+.footer {
+    display: flex;
+    width: inherit;
+    justify-content: center;
+}
+
+.new-game-button {
+    scale: 0.7;
+    width: fit-content;
+}
+
+.history-button {
+    scale: 0.7;
+    width: fit-content;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    width: 100%;
+    background-color: none;
+}

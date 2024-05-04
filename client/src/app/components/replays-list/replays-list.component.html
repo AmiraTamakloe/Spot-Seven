@@ -1,0 +1,90 @@
+<div *transloco="let t; read: 'replay-list'">
+    @if (isUserReplays) {
+    <table mat-table [dataSource]="dataSource" matSort>
+        <ng-container matColumnDef="user">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Trier par joueur">
+                {{t('Joueur')}}
+            </th>
+            <td mat-cell *matCellDef="let element"> {{element.user}} </td>
+        </ng-container>
+        <ng-container matColumnDef="gameName">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Trier par jeu">
+                {{t('Jeu')}}
+            </th>
+            <td mat-cell *matCellDef="let element"> {{element.gameName}} </td>
+        </ng-container>
+        <ng-container matColumnDef="createdAt">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Trier par date de jeu">
+                {{t('Date de jeu')}}
+            </th>
+            <td mat-cell *matCellDef="let element"> {{ element.createdAt | date:'medium' }} </td>
+        </ng-container>
+        <ng-container matColumnDef="replay">
+            <th mat-header-cell *matHeaderCellDef>
+                {{t('Revoir la partie')}}
+            </th>
+            <td mat-cell *matCellDef="let element">
+                <button mat-flat-button color="primary" (click)="startReplay(element.id)">{{t('Revoir')}}</button>
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="visibility">
+            <th mat-header-cell *matHeaderCellDef>
+                {{t('Visibilité')}}
+            </th>
+            <td mat-cell *matCellDef="let element">
+                @if (element.isPublic) {
+                <button mat-button (click)="toggleVisibility(element.id)">
+                    <mat-icon>visibility</mat-icon>
+                </button>
+                } @else {
+                <button mat-button (click)="toggleVisibility(element.id)">
+                    <mat-icon>visibility_off</mat-icon>
+                </button>
+                }
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="delete">
+            <th mat-header-cell *matHeaderCellDef>
+                {{t('Supprimer la reprise')}}
+            </th>
+            <td mat-cell *matCellDef="let element">
+                <button mat-flat-button color="warn" (click)="deleteReplay(element.id)">{{t('Supprimer')}}</button>
+            </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="userDisplayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: userDisplayedColumns;"></tr>
+    </table>
+    }
+    @else {
+    <table mat-table [dataSource]="dataSource" matSort>
+        <ng-container matColumnDef="user">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Trier par joueur">
+                {{t('Joueur')}}
+            </th>
+            <td mat-cell *matCellDef="let element"> {{element.user}} </td>
+        </ng-container>
+        <ng-container matColumnDef="gameName">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Trier par jeu">
+                {{t('Jeu')}}
+            </th>
+            <td mat-cell *matCellDef="let element"> {{element.gameName}} </td>
+        </ng-container>
+        <ng-container matColumnDef="createdAt">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Trier par date de jeu">
+                {{t('Date de jeu')}}
+            </th>
+            <td mat-cell *matCellDef="let element"> {{ element.createdAt | date:'medium' }} </td>
+        </ng-container>
+        <ng-container matColumnDef="replay">
+            <th mat-header-cell *matHeaderCellDef>
+                {{t('Revoir la partie')}}
+            </th>
+            <td mat-cell *matCellDef="let element">
+                <button mat-flat-button color="primary" (click)="startReplay(element.id)">{{t('Revoir')}}</button>
+            </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="publicDisplayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: publicDisplayedColumns;"></tr>
+    </table>
+    }
+</div>

@@ -1,0 +1,48 @@
+.container-LB {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px;
+}
+p.title {
+    font-size: 130%;
+}
+.sub-titles {
+    border: 5px;
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
+div.sub-titles > p {
+    font-size: 110%;
+}
+
+.sub-container {
+    border: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.scores {
+    display: flex;
+    flex-direction: column;
+}
+
+.ranks {
+    border: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+p {
+    font-family: Pirata;
+}
+
+.mat-divider {
+    display: block;
+    margin: 10px;
+    border-top-style: solid;
+}

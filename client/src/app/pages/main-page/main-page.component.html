@@ -1,0 +1,23 @@
+<app-page-base-component>
+    <div class="container-MP" *transloco="let t; read: 'main-page'">
+        <div class="sub-container top-container">
+            <p class="team-number">#{{ getTeamNumber() }}</p>
+            <app-button icon="settings"(click)="verifyAdminPassword()" class="config">{{t("CONFIGURATION")}}</app-button>        </div>
+
+        <div class="sub-container title-logo-container">
+            <h1 class="title" data-text="SPOT SEVEN">SPOT<br />SEVEN</h1>
+            <img src="./assets/logo/logo.png" alt="logo" class="logo" />
+        </div>
+
+        <div class="sub-container buttons-container">
+
+            <app-button icon="star" link="/selection">{{t("MODE CLASSIQUE")}}</app-button>
+            <app-button icon="timer" (click)="openTimeLimitedModal()">{{t("MODE TEMPS LIMITÉ")}}</app-button>
+            <app-button icon="remove_red_eye" link="/observer-selection">{{t("MODE OBSERVATEUR")}}</app-button>
+
+        </div>
+    </div>
+    <div class="horizontal">
+        <p *ngFor="let member of getTeamMembers()">{{ member.name }}</p>
+    </div>
+</app-page-base-component>

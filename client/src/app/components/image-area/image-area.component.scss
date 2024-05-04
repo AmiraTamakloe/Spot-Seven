@@ -1,0 +1,46 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    user-select: none;
+}
+.title{
+    display: flex;
+    justify-content : center;
+}
+
+.background-controls-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.reset{
+    font-family: Pirata;
+    justify-content: center;
+    background-color: #b6d4ef;
+    margin: 5px;
+    
+}
+
+.reset:hover{
+    background-color: #175fa3;
+    scale: 110%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+}
+
+.canvas-container {
+    width: 646px;
+    height: 486px;
+    position: relative;
+}
+
+.canvas-back {
+    z-index: 0;
+}
+
+.canvas-front {
+    z-index: 1;
+}
+
+.canvas-temp {
+    z-index: 2;
+}

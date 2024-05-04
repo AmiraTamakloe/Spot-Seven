@@ -1,0 +1,136 @@
+.container {
+    height: 85vh;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 2.5%;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+    background-size: 400% 400%;
+    justify-content: center;
+}
+
+.top-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 20px; 
+}
+
+.title {
+    justify-content: space-evenly;
+    align-items: center;
+    width: inherit;
+    color: black;
+    font-size: 40pt; 
+    font-family: 'Pirata';
+    padding: 15px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    position: relative;
+    border-radius: 10px;
+    margin-top: 20px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    position: relative;
+    z-index: 0;
+    margin-top: 20px;
+}
+
+.avatar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px; 
+}
+.avatar-buttons {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+}
+
+.avatar-button {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+    overflow: hidden;
+    border: none;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s;
+    margin: 10px;
+
+}
+
+.avatar-button:hover {
+    transform: scale(1.1);
+}
+
+.avatar-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.upload-avatar-btn {
+    font-size: 14pt;
+    font-family: 'Pirata';
+    color: black;
+    background-color: #c3e0e5;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.form-container label {
+    font-size: 14pt;
+    font-family: 'Pirata';
+    color: black;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.submit-btn {
+    width: 20%;
+    padding: 10px;
+    background-color: #c3e0e5;
+    border: none;
+    border-radius: 4px;
+    font-size: 14pt;
+    font-family: 'Pirata';
+    color: black;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+.disclaimer {
+    font-size: 15pt;
+    font-family: 'Pirata';
+    color: rgb(79, 0, 0);
+    text-align: center;
+}
+.info {
+    font-size: 10pt;
+    font-family: 'Pirata';
+    color: black;
+    text-align: center;
+}

@@ -1,0 +1,7 @@
+<div class="canvas-container">
+    <app-canvas [imageArea]="imageArea" [actionObservable]="imageObservable" [class]="canvasClass" class="back">
+    </app-canvas>
+    <app-canvas [imageArea]="imageArea" [actionObservable]="errorObservable" (click)="onClick($event)"
+        [class]="canvasClass" class="front">
+    </app-canvas>
+</div>

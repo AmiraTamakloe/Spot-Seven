@@ -1,0 +1,308 @@
+{
+    "login-page": {
+        "Connexion": "Conexión",
+        "Nom d'utilisateur": "Nombre de usuario",
+        "Mot de passe": "Contraseña",
+        "SE CONNECTER": "INICIAR SESIÓN",
+        "Mot de passe oublié ?": "¿Olvidaste tu contraseña?",
+        "CRÉER UN COMPTE": "CREAR UNA CUENTA",
+        "Ou se connecter avec": "O inicia sesión con",
+        "Nom d'utilisateur ou mot de passe incorrect": "Nombre de usuario o contraseña incorrecta"
+    },
+    "chat-page": {
+        "Se déconnecter": "Desconectar",
+        "Envoyer": "Enviar",
+        "Écrivez-ici": "Escribe aquí",
+        "caractères": "caracteres",
+        "Le message ne doit pas dépasser": "El mensaje no debe exceder",
+        "Créer une nouvelle conversation": "Crear una nueva conversación",
+        "Créer": "Crear",
+        "Nom de la conversation": "Nombre de la conversación"
+    },
+    "constants": {
+        "Voulez-vous vraiment réinitialiser les constantes ?": "¿Realmente quieres restablecer las constantes?"
+    },
+    "modal": {
+        "La partie est terminée": "El juego ha terminado",
+        "Accueil": "Bienvenida",
+        "Revoir la partie": "Repetir el juego",
+        "Jouez en mode temps limité": "Juega en modo de tiempo limitado",
+        "Soyez rapide...le temps s'écoule!": "¡Rápido... el tiempo se acaba!",
+        "Jeu Solo": "Juego Solo",
+        "Jeu Multijoueur": "Juego Multijugador"
+    },
+    "main-page": {
+        "CONFIGURATION": "CONFIGURACIÓN",
+        "MODE CLASSIQUE": "MODA CLASICA",
+        "MODE TEMPS LIMITÉ": "TIEMPO LIMITADO MODO",
+        "MODE OBSERVATEUR": "MODO OBSERVADOR",
+        "Veuillez entrer le mot de passe administrateur": "Por favor, introduzca la contraseña de administrador",
+        "Ouvrir le chat": "Abrir el chat",
+        "Allez créer quelques jeux :)": "¡Ve y crea algunos juegos! :)",
+        "Il n'y a aucun jeu disponible pour le moment.": "En este momento no hay juegos disponibles. Por favor, inténtalo de nuevo más tarde."
+    },
+    "music-modal": {
+        "Select Your Victory Music": "Selecciona tu música de victoria",
+        "Your current music is :": "Tu música actual es :",
+        "Disclaimer : We only accept mp3 files": "Aviso: Solo aceptamos archivos mp3",
+        "Televerser une musique": "Telecargar una música",
+        "Save New Music": "Guardar nueva música"
+    },
+    "create-account-page": {
+        "Création de compte": "Creación de cuenta",
+        "Nom d'utilisateur": "Nombre de usuario",
+        "Courriel": "Correo electrónico",
+        "Mot de passe": "Contraseña",
+        "Réécrivez votre mot de passe": "Reescribe tu contraseña",
+        "Le mot de passe n'est pas le même": "La contraseña no es la misma",
+        "CRÉER UN NOUVEAU COMPTE": "CREAR UNA NUEVA CUENTA",
+        "Ce nom d'utilisateur est déja utilisé": "Este nombre de usuario ya está tomado",
+        "Choisir un avatar": "Elige un avatar"
+    },
+    "configuration": {
+        "Supprimer les fiches": "Borrar las fichas",
+        "Réinitialiser les constantes": "Restablecer las constantes",
+        "Supprimer les classements": "Borrar las clasificaciones",
+        "Supprimer les historiques": "Borrar los historiales",
+        "REGARDER L'HISTORIQUE DES PARTIES": "MIRA EL HISTORIAL DE JUEGOS",
+        "CREER UN NOUVEAU JEU": "CREAR UN NUEVO JUEGO",
+        "Voulez-vous vraiment supprimer toutes les fiches ?": "¿Realmente quieres eliminar todas las cartas?",
+        "Voulez vous vraiment réinitialiser les scores de tous les jeux ?": "¿Realmente quieres restablecer las puntuaciones de todos los juegos?",
+        "Voulez-vous vraiment supprimer l'historique des parties ?": "¿Realmente quieres eliminar el historial de juegos?"
+    },
+    "create-game-page": {
+        "CRÉEZ VOTRE JEU": "CREAR TU JUEGO",
+        "ATTENTION : Le système accepte seulement des images en format BMP 24-bit de taille 640x480": "ATENCIÓN: El sistema solo acepta imágenes en formato BMP de 24 bits de tamaño 640x480",
+        "Abandonner": "Abandonar",
+        "Sélectionnez un rayon d'élargissement": "Elige un radio de expansión",
+        "Lancer la validation des différences": "Empiezar la validación de las diferencias"
+    },
+    "game-page": {
+        "Voulez-vous vraiment abandonner ?": "¿Realmente quieres abandonar?",
+        "ET": "Y",
+        "différences trouvées": "differencias encontradas",
+        "Abandonner la partie": "Abandonar el juego",
+        "Un indice": "Un indicio",
+        "INFORMATIONS": "INFORMATIONES",
+        "Aucun observateur": "Sin observadores",
+        "Observateurs actuels": "Observadores actuales",
+        "Difficulté": "difficultad",
+        "Mode de jeu": "Modos de juego",
+        "Indices Restants": "Indicios restantes",
+        "Accueil": "Bienvenida",
+        "Sauvegarder la reprise": "Guardar recuperación",
+        "Recommencer": "Reanudar",
+        "Pause": "Pausar",
+        "Reprendre": "Reanudar",
+        "Messages": "Mensages",
+        "MODE OBSERVATEUR": "MODO OBSERVADOR"
+    },
+    "time-limited-selection-page": {
+        "Temps Limité 1 Différence": "Tiempo limitado 1 diferencia",
+        "Temps Limité Augmenté": "Tiempo limitado aumentado",
+        "PAGE D'ACCUEIL": "Pagina de inicio"
+    },
+    "user-name": {
+        "Choisissez votre pseudo": "Elige tu seudónimo",
+        "Pseudo": "usuario"
+    },
+    "paint-tools": {
+        "OUTILS": "HERRAMIENTAS",
+        "DESSINER": "DIBUJAR",
+        "EFFACER": "BORRAR",
+        "RECTANGLE": "RECTANGULO",
+        "ELLIPSE": "ELIPSE",
+        "SEAU": "CUBO",
+        "CANETTE": "AERÓGRAFO",
+        "REFAIRE": "REHACER",
+        "ANNULER": "CANCELAR",
+        "ALEATOIRE": "ALEATORIO",
+        "Inverser les Canvas": "lienzos inversos",
+        "Choisissez une taille de pinceau": "Elige un tamaño de pincel"
+    },
+    "loading-modal": {
+        "Chargement...": "Cargando..."
+    },
+    "leaderboard": {
+        "TOP 3": "TOP 3",
+        "SOLO": "SOLO"
+    },
+    "image-area": {
+        "Réinitialiser l'arrière plan": "Restablecer el fondo",
+        "Réinitialiser l'avant plan": "Restablecer el primer plano",
+        "Dupliquer l'avant plan": "Duplication del primer plano"
+    },
+    "history-modal": {
+        "Date": "Fecha",
+        "Durée": "duración",
+        "Mode de jeu": "Modos de juego",
+        "Joueur": "Jugador"
+    },
+    "game-sheet": {
+        "Supprimer le jeu": "Borrar el juego",
+        "Réinitialiser les scores": "Restablecer las puntuaciones",
+        "Jouer une partie solo": "Jugar un partido classica",
+        "Créer une partie duel": "Crear un juego de equipo",
+        "différences": "diferenciaas",
+        "Voulez-vous vraiment supprimer ce jeu ?": "¿Realmente quieres borrar este juego ?",
+        "Voulez vous vraiment réinitialiser les scores de ce jeu ?": "¿Realmente quieres restablecer las puntuaciones de este juego ?",
+        "Jouer en mode multi-joueur": "Jugar en modo multijugador",
+        "Jouer en équipe": "Jugar en equipo"
+    },
+    "game-selection-panel": {
+        "CHARGEMENT...": "Cargando...",
+        "PRÉCÉDENT": "ATRÁS",
+        "SUIVANT": "SIGUIENTE",
+        "PAGE D'ACCUEIL": "PAGINA DE INICIO",
+        "Aucun jeu disponible": "NO HAY JUEGOS DISPONIBLES"
+    },
+    "game-constants-modal": {
+        "Constantes de jeu": "Constantes de juego",
+        "Constante": "Constante",
+        "Annuler": "Anular",
+        "Confirmer": "Confirmar"
+    },
+    "error-modal": {
+        "Erreur": "Error",
+        "Une erreur a été rencontrée": "Un error ha sido encontrado",
+        "Retourner au menu principal": "Volver al menú principal"
+    },
+    "differences-preview-modal": {
+        "Il y a": "Hay",
+        "différences": "diferencias",
+        "Donnez un nom au jeu": "Dale un nombre al juego",
+        "Nom du jeu": "Nombre del juego",
+        "Il faut entre 3 et 9 différences": "Tiene que haber entre 3 y 9 diferencias",
+        "Modifier les images": "Editar las imágenes",
+        "Créer le jeu": "Crear el juego",
+        "Annuler": "Anular",
+        "Confirmer": "Confirmar",
+        "Confirmation": "Confirmación"
+    },
+    "confirm-modal": {
+        "Confirmation": "Confirmación",
+        "Annuler": "Anular",
+        "Confirmer": "Confirmar"
+    },
+
+    "user-profile-dropdown-component": {
+        "Se-déconnecter": "Desconectar",
+        "Statistique": "Estadísticas",
+        "Amis": "Amigos",
+        "Paramètres": "Parametros",
+        "Accueil": "Inicio",
+        "Rejeu": "Repetición",
+        "Bienvenue": "Bienvenido"
+    },
+    "waiting-room": {
+        "Créer une salle d'attente": "Crear una sala de espera",
+        "Créer une salle d'attente amis seulement": "Crea una sala de espera solo para amigos",
+        "Créer une salle d'attente amis et leurs amis": "Crear una sala de espera con mis amigos y sus amigos",
+        "PAGE D'ACCUEIL": "PAGINA DE INICIO",
+        "Rejoindre cette salle d'attente": "Únete a esta sala de espera",
+        "Salle d'attente pleine": "Sala de espera llena",
+        "Salle créée par": "Sala creada por:",
+        "Joueurs": "Jugadores:",
+        "Salles d'attente pour Mode Temps Limite": "Salas de espera para Modo Límite de Tiempo",
+        "Salles d'attente pour Mode Classique du jeu": "Salas de espera para el modo de juego clásico",
+        "Partie de type: Amis seulement": "Tipo de fiesta: solo amigos",
+        "Partie de type: Amis et amis d'amis": "Tipo de fiesta: Amigos y amigos de amigos",
+        "Ma Salle d'attente": "Mi sala de espera",
+        "Quitter cette salle d'attente": "Sal de esta sala de espera",
+        "Annuler la partie": "Cancelar la partida",
+        "Lancer la partie": "Iniciar el juego"
+    },
+    "avatar": {
+        "Paramètres de compte": "Configuración de la cuenta",
+        "Nom d'utilisateur": "Nombre de usuario",
+        "Avatar": "Avatar",
+        "Téleverser un avatar": "Subir un avatar",
+        "Sauvegarder": "Guardar",
+        "Ceci est votre avatar actuel": "Este es tu avatar actual",
+        "Seules les images PNG sont acceptées": "Solo se aceptan imágenes PNG",
+        "Déconnecter le compte": "Se ha desconectado de su cuenta porque ha cambiado su nombre de usuario. Por favor, inicie sesión usando su nuevo nombre de usuario.",
+        "Erreur": "Error",
+        "Bravo": "Felicitaciones",
+        "Info sauvegarder": "Su información ha sido actualizada correctamente.",
+        "Essayez peut-être un nouveau nom d'utilisateur ?": "¿Quizás intente un nuevo nombre de usuario?",
+        "mise à jour avec succès": "Su información se ha actualizado correctamente. "
+    },
+    "statistic": {
+        "Statistique de compte": "Estadísticas de la cuenta",
+        "Nombre de parties jouées": "Número de juegos jugados",
+        "Nombre de parties gagnées": "Número de juegos ganados",
+        "Moyenne de différences trouvées par partie": "Promedio de diferencias encontradas por juego",
+        "Temps moyen par partie": "Tiempo promedio por juego"
+    },
+    "replays-list": {
+        "Reprises publiques": "Repeticiones públicas",
+        "Mes reprises": "Mis repeticiones"
+    },
+    "side-nav": {
+        "Info du compte": "Información de cuenta",
+        "Preferences": "Preferencias",
+        "Historique de compte": "Historial de cuenta",
+        "Statistique": "Estadísticas"
+    },
+    "chat-panel": {
+        "Retour": "Volver",
+        "Switch": "Cambiar",
+        "Créer": "Crear",
+        "Canaux Joignables": "Canales Unibles",
+        "Créer un Canal": "Crear un Canal",
+        "Vos Canaux": "Tus Canales"
+    },
+    "convo": {
+        "Le message ne doit pas dépasser": "El mensaje no debe exceder",
+        "caractères": "caracteres",
+        "Envoyer": "Enviar"
+    },
+    "create-chat": {
+        "Créer une nouvelle conversation": "Crear una nueva conversación",
+        "Le nom du canal ne doit pas dépasser": "El nombre del canal no debe exceder",
+        "caractères": "caracteres",
+        "Créer": "Crear"
+    },
+    "friend-card": {
+        "Voir amis": "Ver amigos",
+        "Bloquer": "Bloquear",
+        "Supprimer": "Borrar",
+        "Ajouter": "Añadir",
+        "Accepter": "Aceptar",
+        "Refuser": "Rechazar",
+        "Supprimer la demande": "Borrar la solicitud",
+        "Débloquer": "Desbloquear"
+    },
+    "friend-list": {
+        "Trouvez un joueur...": "Encuentra un jugador..."
+    },
+    "friend-list-modal": {
+        "Amis de ": "Amigos de "
+    },
+    "load-image-button": {
+        "Charger une image en arrière plan des 2 zones": "Cargar una imagen de fondo para las 2 zonas",
+        "Charger une image en arrière plan": "Cargar una imagen de fondo"
+    },
+    "user-modal-card": {
+        "Ajouter": "Añadir"
+    },
+    "replay-list": {
+        "Joueur": "Jugador",
+        "Jeu": "Juego",
+        "Date de jeu": "Fecha de juego",
+        "Revoir la partie": "Repetir el juego",
+        "Revoir": "Repetir",
+        "Visibilité": "Visibilidad",
+        "Supprimer la reprise": "Borrar la repetición",
+        "Supprimer": "Borrar"
+    },
+    "observer-game-session": {
+        "Mode Observateur: Parties de jeu en cours": "Modo Observador: Juegos en curso",
+        "PAGE D'ACCUEIL": "PÁGINA DE INICIO",
+        "Partie en cours du jeu": "Parte actual del juego",
+        "Observateur présent": "Observador presente",
+        "Observateurs actuels": "Observadores actuales",
+        "Aucun observateur": "Sin observador",
+        "Observer la partie": "Observar el juego"
+    }
+}

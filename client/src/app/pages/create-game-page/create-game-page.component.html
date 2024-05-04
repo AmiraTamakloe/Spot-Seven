@@ -1,0 +1,45 @@
+<div class="background-CGP">
+    <app-animated-background></app-animated-background>
+    <div class="container-CGP" *transloco="let t; read: 'create-game-page'">
+        <div class="sub-container-CGP">
+            <div class="main-box">
+                <div>
+                    <p class="title">{{t('CRÉEZ VOTRE JEU')}}</p>
+                </div>
+                <div class="image-areas">
+                    <app-image-area [imageArea]="areas.ORIGINAL"></app-image-area>
+                    <app-image-area [imageArea]="areas.MODIFIED"></app-image-area>
+                </div>
+                <div>
+                    <p class="warning">
+                        {{t('ATTENTION : Le système accepte seulement des images en format BMP 24-bit de taille 640x480')}}
+                    </p>
+                </div>
+                <div class="buttons">
+
+                    <app-button class="quit" link="/config"
+                        icon="sentiment_very_dissatisfied">{{t('Abandonner')}}</app-button>
+                    <app-appearance></app-appearance>
+
+                    <div class="buttons-container">
+                        <app-load-image-button [imageArea]="areas.BOTH"></app-load-image-button>
+                        <span>
+                            <p>{{t("Sélectionnez un rayon d'élargissement")}}</p>
+                            <select [(ngModel)]="selectedRadius">
+                                <option *ngFor="let radius of radiuses" [ngValue]="radius">{{ radius }}</option>
+
+                            </select>
+                        </span>
+                        <button class="validation" mat-raised-button (click)="handleValidation()">
+                            {{t('Lancer la validation des différences')}}
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="paint-tools">
+                <app-paint-tools></app-paint-tools>
+            </div>
+
+        </div>
+    </div>

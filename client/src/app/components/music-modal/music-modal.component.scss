@@ -1,0 +1,64 @@
+div .subtitle {
+    text-align: center;
+    font-family: 'Pirata';
+    font-size: 25px;
+}
+
+div .title {
+    text-align: center;
+    font-family: 'Pirata';
+    font-size: 25px;
+}
+
+.mat-dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.mat-mdc-dialog-actions {
+    justify-content: end;
+}
+div .disclaimer {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+.disclaimer {
+    font-family: 'Pirata';
+    color: rgb(0, 0, 18);
+}
+
+div .regular-button{
+    padding: 20px;
+    background: none;
+    border: none;
+    font-family: 'Pirata';
+    font-size: 25px;
+    color: rgb(8, 0, 52);
+}
+
+.Save {
+    background: none;
+    border: none;
+    font-family: 'Pirata';
+    font-size: 25px;
+    color: rgb(8, 0, 52);
+}
+div .regular-button:hover {
+    background: rgba(62, 45, 167, 0.565);
+    border: none;
+}
+
+div .upload-music-btn{
+    background: none;
+    border: none;
+    font-family: 'Pirata';
+    font-size: 25px;
+    color: rgb(8, 0, 52);
+    margin-left: 7px;
+}
+
+div .upload-music-btn:hover {
+    background: rgba(62, 45, 167, 0.565);
+    border: none;
+}

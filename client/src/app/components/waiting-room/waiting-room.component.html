@@ -1,0 +1,103 @@
+<div class="container" *transloco="let t; read: 'waiting-room'">
+
+    <div class="creator-info">
+        @if (!this.isCreator()) {
+        <h1 class="created-by">
+            {{t("Salle créée par")}}
+        </h1>
+        <button class="player-button player-username custom-button">
+            <i *ngIf="!creatorAvatar" class="material-icons">emoji_people</i>
+            <div *ngIf="!!creatorAvatar" class="account-info">
+                <img [src]="creatorAvatar" alt="User Avatar" class="user-avatar">
+            </div>
+            {{waitingRoom.creator.username}}
+        </button>
+    } @else {
+        <h1 class="created-by my-wr">
+        {{t("Ma Salle d'attente")}}
+    </h1>
+    <button class="player-button player-username custom-button">
+        <i *ngIf="!creatorAvatar" class="material-icons">emoji_people</i>
+        <div *ngIf="!!creatorAvatar" class="account-info">
+            <img [src]="creatorAvatar" alt="User Avatar" class="user-avatar">
+        </div>
+    </button>
+
+    }
+    </div>
+
+    <div class="friends-game-type">
+        @if(waitingRoom.friendsGameType === friendsOnly) {
+        <h1>
+            <i class="material-icons">group</i>
+            {{t("Partie de type: Amis seulement")}}
+        </h1>
+        }
+        @if(waitingRoom.friendsGameType === friendsOfFriends) {
+        <h1>
+            <i class="material-icons">groups</i>
+            {{t("Partie de type: Amis et amis d'amis")}}
+        </h1>
+        }
+    </div>
+
+    <div class="waiting-players">
+        <h1>
+            {{t("Joueurs")}}
+        </h1>
+        @if (this.waitingRoom.gameMode === 'classicTeam'){
+            <div>
+                <div *ngFor="let teams of this.waitingRoom.teams;index as i">
+                    <div *ngFor="let player of teams" class="waiting-players-container">
+                        <h4>Équipe {{ i + 1 }}</h4>
+                        <button class="player-button custom-button">
+                            <i *ngIf="!playerNameToAvatar.get(player.username)" class="material-icons">emoji_people</i>
+                            <div class="account-info">
+                                <img *ngIf="!!playerNameToAvatar.get(player.username)"
+                                    [src]="playerNameToAvatar.get(player.username)" alt="User Avatar" class="user-avatar">
+                            </div>
+                            {{player.username}}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        } @else {
+            <div class="waiting-players-container">
+                <div *ngFor="let player of this.waitingRoom.waitingPlayers; trackBy: id">
+                    <button class="player-button custom-button">
+                        <i *ngIf="!playerNameToAvatar.get(player.username)" class="material-icons">emoji_people</i>
+                        <div class="account-info">
+                            <img *ngIf="!!playerNameToAvatar.get(player.username)"
+                                [src]="playerNameToAvatar.get(player.username)" alt="User Avatar" class="user-avatar">
+                        </div>
+                        {{player.username}}
+                    </button>
+                </div>
+            </div>
+        }
+    </div>
+
+    @if (!this.isCreator()) {
+        @if (!this.isInRoom()) {
+    <button *ngIf="isRoomJoinable()" class="join-button custom-button"
+        (click)="gameStartService.joinWaitingRoom(waitingRoom.id)">
+        <i class="material-icons">group</i>
+        {{t("Rejoindre cette salle d'attente")}}</button>
+    <app-button *ngIf="!isRoomJoinable()" icon="people" [isDisabled]="true">{{t("Salle d'attente pleine")}}</app-button>
+        }@else {
+            <button class="join-button custom-button"
+            (click)="gameStartService.leaveWaitingRoom()">
+            <i class="material-icons">group</i>
+            {{t("Quitter cette salle d'attente")}}</button>
+        }
+    } @else {
+        <button *ngIf="isLaunchable()" class="join-button custom-button"
+        (click)="gameStartService.launchGame()">
+        <i class="material-icons">group</i>
+        {{t("Lancer la partie")}}</button>
+        <button  class="join-button custom-button"
+        (click)="gameStartService.cancelWaitingRoom(gameId)">
+        <i class="material-icons">group</i>
+        {{t("Annuler la partie")}}</button>
+    }
+</div>

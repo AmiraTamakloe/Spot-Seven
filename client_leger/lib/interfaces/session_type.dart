@@ -1,0 +1,4 @@
+enum SessionType {
+  classic,
+  timeLimited,
+}

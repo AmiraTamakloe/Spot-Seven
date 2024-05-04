@@ -1,0 +1,67 @@
+@startuml
+
+actor "Joueur 1" as player1
+box "Client 1" #LightBlue
+participant "GameStartService" as gameStartService1
+participant "GameService" as gameService1
+participant "SocketService" as socketService1
+end box
+
+actor "Joueur 2" as player2
+box "Client 2" #LightSlateGray
+participant "GameStartService" as gameStartService2
+participant "GameService" as gameService2
+
+participant "SocketService" as socketService2
+end box
+
+box "Serveur" #LightGreen
+participant "GameStartGateway" as gameStartGateway
+participant "GameGateway" as gameGateway
+participant "GameManagerService" as gameManagerService
+end box
+
+database "Base de données" as db
+activate gameStartGateway
+activate gameGateway
+
+player1 -> gameStartService1 : Start Game
+activate gameStartService1
+gameStartService1 -> socketService1 : startGame()
+activate socketService1
+socketService1 -> gameStartGateway : send(StartGame, gameInfo)
+
+alt Multijoueur
+    player2 -> gameStartService2 : Join Game
+    activate gameStartService2
+    gameStartService2 -> socketService2 : joinGame()
+    activate socketService2
+    socketService2 -> gameStartGateway : send(JoinGame, gameInfo)
+    socketService2 <-- gameStartGateway: send(StartGame)
+    deactivate gameStartService2
+    deactivate socketService2
+end
+
+gameStartService1 <-- gameStartGateway : send(StartGame)
+activate gameService1
+gameStartGateway -> gameManagerService : startGame()
+activate gameManagerService
+deactivate gameStartService1
+
+loop gameOver == false
+    gameService1 -> socketService1 : clickCanvas()
+    socketService1 -> gameGateway : send(ClickCanvas, gameInfo)
+    gameGateway -> gameManagerService : verifyClick()
+
+    alt good guess
+        gameGateway <-- gameManagerService  : goodGuess
+        socketService1 <- gameGateway   : send(goodGuess, guessInfo)
+        gameService1 <- socketService1  : goodGuess(guessInfo)
+    else bad guess
+        gameGateway <-- gameManagerService : badGuess
+        socketService1 <- gameGateway : send(badGuess, guessInfo)
+        gameService1 <- socketService1  : badGuess(badGuess, guessInfo)
+    end
+
+end
+@enduml

@@ -1,0 +1,36 @@
+<div [ngClass]="themeService.themeSignal()" class="container-LB" *transloco="let t; read: 'leaderboard'">
+    <p class="title">{{t('TOP 3')}}</p>
+    <div class="sub-titles">
+        <p class="">{{t('SOLO')}}</p>
+        <p>1 VS 1</p>
+    </div>
+
+    <div class="sub-container">
+        <div class="scores">
+            <div *ngFor="let item of game.soloHighScores; index as position">
+                <span class="ranks">
+                    <p>{{position+1}}.</p>
+                    &nbsp;
+                    <p>{{item.playerName}}</p>
+                    &nbsp;
+                    <p>{{this.format(item.time)}}</p>
+                </span>
+            </div>
+        </div>
+
+        <mat-divider [vertical]="true"></mat-divider>
+
+        <div class="scores">
+            <div *ngFor="let item of game.duelHighScores; index as position">
+                <span class="ranks">
+                    <p>{{position+1}}.</p>
+                    &nbsp;
+                    <p>{{item.playerName}}</p>
+                    &nbsp;
+                    <p>{{this.format(item.time)}}</p>
+                </span>
+            </div>
+        </div>
+    </div>
+
+</div>

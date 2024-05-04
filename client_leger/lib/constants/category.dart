@@ -1,0 +1,4 @@
+enum Category {
+  language,
+  theme,
+}

@@ -1,0 +1,43 @@
+{
+    "folders": [
+        {
+            "name": "Project",
+            "path": "."
+        },
+        {
+            "name": "Client Lourd",
+            "path": "./client"
+        },
+        {
+            "name": "Serveur",
+            "path": "./server"
+        },
+        {
+            "name": "Commun",
+            "path": "./common"
+        },
+        {
+            "name": "Client Léger",
+            "path": "./client_leger"
+        }
+    ],
+    "settings": {
+        "workbench.activityBar.location": "side",
+        "files.autoSave": "afterDelay",
+        "files.insertFinalNewline": true,
+        "files.trimTrailingWhitespace": true,
+        "editor.renderWhitespace": "boundary",
+        "editor.bracketPairColorization.enabled": true,
+        "editor.formatOnSave": true,
+        "git.autofetch": true
+    },
+    "extensions": {
+        "recommendations": [
+            "esbenp.prettier-vscode",
+            "ms-azuretools.vscode-docker",
+            "ms-vscode.vscode-typescript-tslint-plugin",
+            "ms-vscode.vscode-typescript-next",
+            "Angular.ng-template"
+        ]
+    }
+}

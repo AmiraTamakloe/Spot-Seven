@@ -1,0 +1,10 @@
+<div class="create" *transloco="let t; read: 'create-chat'">
+    <p class="title">{{t('Créer une nouvelle conversation')}}</p>
+    @if (chatName.length > maxNameConvo) {
+        <p class="alert_msg">{{t("Le nom du canal ne doit pas dépasser")}} {{ maxNameConvo}} {{t('caractères')}}.</p>
+    }
+    <div class="input-container">
+        <input type="text" placeholder="Nom de la conversation" [(ngModel)]="chatName" class="input" maxlength="maxNameConvo">
+        <button (click)="create()" class="button">{{t('Créer')}}</button>
+    </div>
+</div>

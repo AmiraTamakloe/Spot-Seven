@@ -1,0 +1,24 @@
+.canvas-container {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    user-select: none;
+    width: 640px;
+    height: 480px;
+}
+
+.left {
+    left: 0;
+}
+
+.right {
+    right: 0;
+}
+
+.front {
+    z-index: 1;
+}
+
+.back {
+    z-index: 0;
+}

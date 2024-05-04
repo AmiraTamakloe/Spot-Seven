@@ -1,0 +1,93 @@
+.chat_window {
+  position: fixed;
+  bottom: 2%; /* 20px */
+  right: 2%; /* 20px */
+  width: 35%;
+  height: 88%;
+  background-color: #59f580;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  height: 5%;
+  align-items: center;
+  padding: 1%; /* 10px */
+  border-bottom: 1px solid #ccc;
+  background-color: #D9D9D9;
+  text-align: center;
+  justify-content: center;
+  flex: 0 0 5%;
+}
+
+.content {
+  overflow-y: auto;
+  background-color: #357DED;
+  flex: 1;
+}
+
+.footer {
+  height: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1%; /* 10px */
+  border-top: 1px solid #ccc;
+  background-color: #D9D9D9;
+  flex: 0 0 5%;
+}
+
+.footer-buttons {
+  display: flex;
+}
+
+.switch-button,
+.create-button {
+  margin-right: 1%; /* 10px */
+}
+
+.switch-button button,
+.create-button button {
+  width: 10vw; /* 100px */
+}
+
+.footer button:hover {
+  background-color: #0056b3;
+}
+
+.chat_list {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1%; /* 10px */
+}
+
+.chat_list:first-child {
+  padding-top: 1%; /* 10px */
+}
+
+.app-chat-bubble-bar {
+  padding: 1%; /* 10px */
+}
+
+.quit_button {
+  background-color: #ea2a2a;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: 1%; /* 10px */
+}
+
+.chat_bubble {
+  background-color: aqua;
+  border-radius: 3vw; /* 30px */
+  width: 100%;
+  margin-left: 1%; /* 10px */
+  margin-right: 1%; /* 10px */
+}

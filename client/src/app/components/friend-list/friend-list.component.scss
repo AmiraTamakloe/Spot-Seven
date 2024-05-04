@@ -1,0 +1,35 @@
+.container-FL {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 50px;
+}
+.search-bar {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
+.scrollable-container {
+    max-height: 300px;
+    margin-top: 50px;
+    overflow-y: auto;
+    width: 80%;
+}
+
+.scrollable-content {
+    padding-right: 40px;
+    margin-top: 20px;
+    overflow-y: auto;
+    width: 95%;
+    padding-left: 50px;
+}
+
+.friend-card {
+    margin-bottom: 20px;
+}

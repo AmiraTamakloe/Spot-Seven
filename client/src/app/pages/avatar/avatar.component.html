@@ -1,0 +1,34 @@
+<app-page-base-component>
+    <div class="container" *transloco="let t; read: 'avatar'"> 
+        <div class="top-container">
+            <h1 class="title">{{t("Paramètres de compte")}}</h1>
+        </div>
+        <div class="form-container">
+            <form class="form-field" [formGroup]="avatarForm" (ngSubmit)="onSubmit()">
+                <label for="username">{{t("Nom d'utilisateur")}}</label>
+                <input type="text" id="username" name="username" formControlName="username">
+                <label for="avatar"> {{t("Avatar")}}</label>
+                <div class="avatar-buttons">
+                    <button type="button" *ngFor="let avatar of avatarsUrl" (click)="selectAvatar(avatar.name)" class="avatar-button">
+                        <img [src]="avatar.url" alt="Avatar" class="avatar-image">
+                    </button>
+                </div>
+                <label for="upload-input" class="upload-avatar-btn">
+                    <input style="display: none" type="file" accept="image/png" (change)="onFileSelected($event)"
+                        #hiddenfileinput>
+                    <button type="button" (click)="hiddenfileinput.click()" class="upload-avatar-btn">
+                        <i class="material-icons">file_upload</i>{{t("Téleverser un avatar")}}</button>
+                </label>
+                <p class="disclaimer">*{{t("Seules les images PNG sont acceptées")}}</p>
+                <input type="hidden" formControlName="avatar">
+                <button type="submit" class="submit-btn">{{t("Sauvegarder")}}</button>
+            </form>
+        </div>
+        <div class="info">
+            {{t("Ceci est votre avatar actuel")}} {{user.username}}
+            <button class="avatar-button">
+                <img [src]="currentAvatar" alt="Avatar" class="avatar-image">
+            </button>
+        </div>
+    </div>
+</app-page-base-component>

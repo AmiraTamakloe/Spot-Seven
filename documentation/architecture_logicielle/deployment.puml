@@ -1,0 +1,54 @@
+@startuml
+top to bottom direction
+node "STEP Linux Server" as vm {
+    rectangle Docker {
+        component "Traefik" as traefik
+        component "NestJS Server" as nestjsServer
+        database "PostrgreSQL" as db
+    }
+}
+
+node "Machine Windows/Linux/MacOS" {
+    component "Client Eletcron" as heavy_client
+}
+
+node "Appareil Android/IOS" {
+    component "Client Mobile" as mobile_client
+}
+
+note top of heavy_client
+    Electron
+    Angular 17
+    NodeJS 18.19.0
+end note
+
+note top of mobile_client
+    Flutter 3.16
+end note
+
+note top of vm
+    Docker 25.0.2
+    Ubuntu 22.04
+    Openstack
+end note
+
+note bottom of traefik
+    Reverse Proxy
+    Load Balancer
+end note
+
+note bottom of nestjsServer
+    NestJS 9.0.0
+    NodeJS 18.19.0
+end note
+
+note bottom of db
+    PostgreSQL 16z.0
+end note
+
+mobile_client -down-> traefik : HTTPS et Websockets
+heavy_client -down-> traefik : HTTPS et Websockets
+traefik -right-> nestjsServer: PROXY
+nestjsServer -right-> db: TCP/IP
+
+@enduml

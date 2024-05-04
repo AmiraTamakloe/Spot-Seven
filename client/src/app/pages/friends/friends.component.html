@@ -1,0 +1,19 @@
+<app-page-base-component>
+    <mat-tab-group class="container-friends">
+        <mat-tab label="Friends">
+            <app-friend-list pageStatus="Friends" [data]="friendItems"></app-friend-list>
+        </mat-tab>
+        <mat-tab label="Find Users">
+            <app-friend-list pageStatus="Users" [data]="usersItems"></app-friend-list>
+        </mat-tab>
+        <mat-tab label="Invite Received">
+            <app-friend-list pageStatus="Invite-Received" [data]="requestReceivedItems"></app-friend-list>
+        </mat-tab>
+        <mat-tab label="Invite Sent">
+            <app-friend-list pageStatus="Invite-Send" [data]="requestSentItems"></app-friend-list>
+        </mat-tab>
+        <mat-tab label="Blocked User">
+            <app-friend-list pageStatus="Blocked" [data]="blockedUserItems"></app-friend-list>
+        </mat-tab>
+    </mat-tab-group>
+</app-page-base-component>

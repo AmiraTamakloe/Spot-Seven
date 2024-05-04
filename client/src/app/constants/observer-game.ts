@@ -1,0 +1,1 @@
+export const OBSERVER_RENDERING_TIME = 200;

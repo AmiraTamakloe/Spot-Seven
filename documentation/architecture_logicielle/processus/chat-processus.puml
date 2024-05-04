@@ -1,0 +1,41 @@
+@startuml
+actor "Joueur" as player1
+box "Client 1"
+participant "ChatComponent" as chatComponent1
+participant "ChatService" as chatServiceClient1
+end box
+
+actor "Joueur" as player2
+box "Client 2"
+participant "ChatComponent" as chatComponent2
+participant "ChatService" as chatServiceClient2
+end box
+
+box "Serveur"
+participant "ChatGateway" as chatGateway
+participant "ChatService" as chatServiceServer
+end box
+
+database "Base de données" as db
+
+activate chatServiceClient2
+activate chatServiceClient1
+activate chatComponent1
+player1 -> chatComponent1 : Rédige un message
+chatComponent1 -> chatServiceClient1 : sendMessage(message)
+
+chatServiceClient1 -> chatGateway : send(message)
+
+activate chatGateway
+chatGateway -> chatServiceServer : save(Message)
+activate chatServiceServer
+chatServiceServer -> db : save(Message)
+chatServiceClient1 <-- chatServiceServer : on(message)
+deactivate chatServiceServer
+chatComponent1 <- chatServiceClient1 : Affiche message
+
+chatServiceClient2 <-- chatGateway : on(message)
+chatComponent2 <- chatServiceClient2 : Affiche message
+
+
+@enduml

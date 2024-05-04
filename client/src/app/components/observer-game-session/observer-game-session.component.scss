@@ -1,0 +1,90 @@
+.container {
+    background-color: #c3e0e5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 15px;
+    margin: 5px;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 5px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+.game-session {
+    display: flex;
+    height: 100%;
+    width: 80%;
+    padding: 5px;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+        font-family: Pirata;
+    }
+}
+
+.game-name {
+    font-style: italic;
+}
+
+.user-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.account-info {
+    display: flex;
+    align-items: center;
+}
+
+.custom-button {
+    margin: 20px;
+    padding: 2pt 8pt;
+    font-size: 15pt;
+    border-radius: 10pt;
+    background-color: darkcyan;
+    font-family: 'Pirata';
+    height: max-content;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    line-height: 40px;
+}
+
+.player-button {
+    pointer-events: none;
+}
+
+.join-button {
+    cursor: pointer;
+    background: white;
+}
+
+
+.join-button:hover {
+    cursor: pointer;
+    background: linear-gradient(90deg, rgb(48, 48, 194) 0%, rgb(113, 183, 253) 51%);
+}
+
+.waiting-players h1 {
+    font-family: Pirata;
+}
+
+.waiting-players-container {
+
+    display: grid;
+    grid-template:
+        'grid-sheet1 grid-sheet2'
+        'grid-sheet3 grid-sheet4';
+
+    grid-template-columns: 1fr 1fr;
+    grid-row: 1fr 1fr;
+    width: 100%;
+    height: 100%;
+    user-select: none;
+    border: 3px solid darkblue;
+    border-radius: 15px;
+}

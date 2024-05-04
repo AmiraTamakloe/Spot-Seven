@@ -1,0 +1,501 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+// TODO(v15): As of v15 mat.legacy-core no longer includes default typography styles.
+//  The following line adds:
+//    1. Default typography styles for all components
+//    2. Styles for typography hierarchy classes (e.g. .mat-headline-1)
+//  If you specify typography styles for the components you use elsewhere, you should delete this line.
+//  If you don't need the default component typographies but still want the hierarchy styles,
+//  you can delete this line and instead use:
+//    `@include mat.legacy-typography-hierarchy(mat.define-typography-config());`
+@include mat.all-component-typographies();
+@include mat.core();
+
+$indigo-pink-theme: mat.define-light-theme((color: (primary: mat.define-palette(mat.$indigo-palette),
+                accent: mat.define-palette(mat.$pink-palette, A200, A100, A400),
+                warn: mat.define-palette(mat.$red-palette),
+            ),
+        ));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($indigo-pink-theme);
+
+.indigo-pink-theme {
+    // Nothing to do. This is the default theme
+}
+
+.deeppurple-amber-theme {
+    $deeppurple-amber-theme: mat.define-light-theme((color: (primary: mat.define-palette(mat.$deep-purple-palette),
+                    accent: mat.define-palette(mat.$amber-palette, A200, A100, A400),
+                ),
+            ));
+    @include mat.all-component-colors($deeppurple-amber-theme);
+}
+
+.pink-bluegrey-theme {
+    $pink-bluegrey-theme: mat.define-dark-theme((color: (primary: mat.define-palette(mat.$pink-palette, 700, 500, 900),
+                    accent: mat.define-palette(mat.$blue-grey-palette, A200, A100, A400),
+                ),
+            ));
+    @include mat.all-component-colors($pink-bluegrey-theme);
+}
+
+.purple-green-theme {
+    $purple-green-theme: mat.define-dark-theme((color: (primary: mat.define-palette(mat.$purple-palette, 700, 500, 800),
+                    accent: mat.define-palette(mat.$green-palette, A200, A100, A400),
+                ),
+            ));
+    @include mat.all-component-colors($purple-green-theme);
+}
+
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'Pirata';
+    src: url('./assets/font/PirataOne-Regular.ttf') format('truetype');
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: 'Pirata', Roboto, 'Helvetica Neue', sans-serif;
+}
+
+:root {
+    --darkBackground: #274472;
+    --lightBackground: #90d5f3;
+}
+
+
+.dark {
+    .mat-mdc-tab-header {
+        --mdc-tab-indicator-active-indicator-color: #e1daff;
+        --mat-tab-header-disabled-ripple-color: rgba(4, 8, 48, 0.673);
+        --mat-tab-header-pagination-icon-color: #000;
+        --mat-tab-header-inactive-label-text-color: rgba(4, 8, 48, 0.673);
+        --mat-tab-header-active-label-text-color: #e1daff;
+        --mat-tab-header-active-ripple-color: #e1daff;
+        --mat-tab-header-inactive-ripple-color: #e1daff;
+        --mat-tab-header-inactive-focus-label-text-color: rgba(4, 8, 48, 0.673);
+        --mat-tab-header-inactive-hover-label-text-color: rgba(4, 8, 48, 0.673);
+        --mat-tab-header-active-focus-label-text-color: #e1daff;
+        --mat-tab-header-active-hover-label-text-color: #e1daff;
+        --mat-tab-header-active-focus-indicator-color: #e1daff;
+        --mat-tab-header-active-hover-indicator-color: #e1daff;
+    }
+
+    .mat-mdc-tab .mdc-tab__text-label {
+        font-family: 'Pirata';
+        color: var(--mat-tab-header-inactive-label-text-color);
+        display: inline-flex;
+        align-items: center;
+        font-size: 25px;
+    }
+
+    background-color: var(--darkBackground);
+
+    .animated-background {
+        background-color: var(--darkBackground);
+    }
+
+    .background {
+        background-color: var(--darkBackground);
+    }
+
+    .form-container {
+        background-color: #183462;
+    }
+
+    .container {
+        background: linear-gradient(-45deg, #032929, #dde7e9, #032929);
+        animation: gradient 10s ease infinite;
+    }
+
+    .container-MP {
+        background: linear-gradient(-45deg, #011f1f, #dde7e9, #032929);
+        background-size: 400% 400%;
+        animation: gradient 10s ease infinite;
+    }
+
+    .container-GS {
+        background-color: #0b2f35;
+    }
+
+    .sub-container-GS {
+        background-color: #0b2f35;
+    }
+
+    .container-LB {
+        background-color: #0b2f35;
+    }
+
+    .container-LB:hover {
+        background-color: #0b2f35;
+    }
+
+    .container-GS:hover {
+        background-color: #0b2f35;
+    }
+
+    .container-config {
+        background-color: var(--darkBackground);
+    }
+
+    .container-GSP {
+        background-color: var(--darkBackground);
+    }
+
+    .container-replay {
+        background-color: var(--darkBackground);
+    }
+
+    .container-friends {
+        background-color: var(--darkBackground);
+    }
+
+    .container-FL {
+        background-color: #3f68b3;
+        border-radius: 30px;
+    }
+
+    .container-creation {
+        height: 95%;
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        border-radius: 2.5%;
+        align-items: center;
+        justify-content: space-between;
+        user-select: none;
+        background: linear-gradient(-45deg, #032929, #dde7e9, #032929);
+        background-size: 400% 400%;
+        animation: gradient 10s ease infinite;
+        justify-content: center;
+    }
+
+
+    .sidebar {
+        background-color: #0b2f35;
+    }
+
+    .selection-page .navbar {
+        background-color: var(--darkBackground);
+    }
+
+    .box-GP {
+        background-color: #02282f;
+    }
+
+    .messages {
+        background-color: #03363f;
+    }
+
+    .container-GP {
+        background-color: #274472;
+    }
+
+    .mdc-button .mdc-button__label {
+        font-family: 'Pirata';
+        position: relative;
+    }
+
+    .main-button {
+        background-color: #172845;
+        color: white;
+    }
+    .language-icon,
+    .btn-primary {
+        color: white;
+    }
+    .mat-mdc-button {
+        font-family: 'Pirata';
+        font-size: var(--mdc-text-button-label-text-size);
+        letter-spacing: var(--mdc-text-button-label-text-tracking);
+        font-weight: var(--mdc-text-button-label-text-weight);
+        text-transform: var(--mdc-text-button-label-text-transform);
+        height: var(--mdc-text-button-container-height);
+        border-radius: var(--mdc-text-button-container-shape);
+        --mdc-text-button-container-shape: 4px;
+        --mdc-text-button-container-height: 36px;
+        --mdc-text-button-keep-touch-target: false;
+    }
+
+    .mat-mdc-tab .mdc-tab__text-label {
+        font-family: 'Pirata';
+        color: var(--mat-tab-header-inactive-label-text-color);
+        display: inline-flex;
+        align-items: center;
+        font-size: 25px;
+    }
+
+    .mat-mdc-tab-header {
+        --mdc-tab-indicator-active-indicator-color: #b2aff6;
+        --mat-tab-header-disabled-ripple-color: rgba(0, 0, 39, 0.6);
+        --mat-tab-header-pagination-icon-color: #00150e;
+        --mat-tab-header-inactive-label-text-color: rgba(0, 0, 39, 0.6);
+        --mat-tab-header-active-label-text-color: #b2aff6;
+        --mat-tab-header-active-ripple-color: #b2aff6;
+        --mat-tab-header-inactive-ripple-color: #b2aff6;
+        --mat-tab-header-inactive-focus-label-text-color: rgba(0, 0, 39, 0.6);
+        --mat-tab-header-inactive-hover-label-text-color: rgba(0, 0, 39, 0.6);
+        --mat-tab-header-active-focus-label-text-color: #b2aff6;
+        --mat-tab-header-active-hover-label-text-color: #b2aff6;
+        --mat-tab-header-active-focus-indicator-color: #b2aff6;
+        --mat-tab-header-active-hover-indicator-color: #b2aff6;
+    }
+
+    .mat-mdc-header-cell {
+        border-bottom-color: var(--mat-table-row-item-outline-color, rgba(0, 0, 0, 0.12));
+        border-bottom-width: var(--mat-table-row-item-outline-width, 1px);
+        border-bottom-style: solid;
+        letter-spacing: var(--mat-table-header-headline-tracking);
+        font-weight: inherit;
+        font-family: 'Pirata';
+        line-height: inherit;
+        font-size: xx-large;
+    }
+
+    .mdc-data-table__cell {
+        box-sizing: border-box;
+        overflow: hidden;
+        text-align: center;
+        font-family: 'Pirata';
+        font-size: x-large;
+        text-overflow: ellipsis;
+    }
+
+    .mat-mdc-header-cell {
+        border-bottom-color: var(--mat-table-row-item-outline-color, rgba(0, 0, 0, 0.12));
+        border-bottom-width: var(--mat-table-row-item-outline-width, 1px);
+        border-bottom-style: solid;
+        letter-spacing: var(--mat-table-header-headline-tracking);
+        font-weight: inherit;
+        font-family: 'Pirata';
+        line-height: inherit;
+        font-size: x-large;
+    }
+
+    .mdc-data-table__header-cell {
+        box-sizing: border-box;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        outline: none;
+        text-align: center;
+    }
+}
+
+.light {
+    background-color: var(--lightBackground);
+
+    .animated-background {
+        background-color: var(--lightBackground);
+    }
+
+    .background {
+        background-color: var(--lightBackground);
+    }
+
+    .form-container {
+        background-color: #b3c4e1;
+    }
+
+    .form-container-creation {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #b3c4e1;
+        padding: 30px;
+        position: relative;
+        border-radius: 10px;
+        margin-top: 20px;
+        position: relative;
+    }
+
+    .container {
+        background: linear-gradient(-45deg, #8de5e5, #dde7e9, #8de5e5);
+        animation: gradient 10s ease infinite;
+    }
+
+    .container-MP {
+        background: linear-gradient(-45deg, #b0dfe8, #dde7e9, #11cfcf);
+        background-size: 400% 400%;
+        animation: gradient 10s ease infinite;
+
+    }
+
+    .main-button {
+        background-color: #98c8ff;
+        color: #000;
+    }
+
+    .container-replay {
+        background-color: var(--lightBackground);
+    }
+
+    .container-friends {
+        background-color: var(--lightBackground);
+    }
+
+    .container-FL {
+        background-color: rgb(111, 156, 219);
+        border-radius: 30px;
+    }
+
+    .container-creation {
+        height: 95%;
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        border-radius: 2.5%;
+        align-items: center;
+        justify-content: space-between;
+        user-select: none;
+        background: linear-gradient(-45deg, #b0dfe8, #dde7e9, #11cfcf);
+        background-size: 400% 400%;
+        animation: gradient 10s ease infinite;
+        justify-content: center;
+    }
+
+    .container-GS {
+        background-color: #98c8ff;
+    }
+
+    .sub-container-GS {
+        background-color: #98c8ff;
+    }
+
+    .container-LB {
+        background-color: #98c8ff;
+    }
+
+    .container-LB:hover {
+        background-color: #98c8ff;
+    }
+
+    .container-GS:hover {
+        background-color: #98c8ff;
+    }
+
+    .container-config {
+        background-color: #98c8ff;
+    }
+
+    .container-GSP {
+        background-color: var(--lightBackground);
+    }
+
+    .sidebar {
+        background-color: #a3f1ff;
+    }
+
+    .selection-page .navbar {
+        background-color: var(--lightBackground);
+    }
+
+    .box-GP {
+        background-color: #C3E0E5;
+    }
+
+    .messages {
+        background-color: #C3E0E5;
+    }
+
+    .container-GP {
+        background-color: #C3E0E5;
+    }
+
+    .mat-mdc-header-cell {
+        border-bottom-color: var(--mat-table-row-item-outline-color, rgba(0, 0, 0, 0.12));
+        border-bottom-width: var(--mat-table-row-item-outline-width, 1px);
+        border-bottom-style: solid;
+        letter-spacing: var(--mat-table-header-headline-tracking);
+        font-weight: inherit;
+        font-family: 'Pirata';
+        line-height: inherit;
+        font-size: x-large;
+    }
+
+    .mdc-data-table__cell {
+        box-sizing: border-box;
+        overflow: hidden;
+        text-align: center;
+        font-family: 'Pirata';
+        font-size: x-large;
+        text-overflow: ellipsis;
+    }
+
+    .mdc-button .mdc-button__label {
+        font-family: 'Pirata';
+        position: relative;
+    }
+
+    .mat-mdc-tab .mdc-tab__text-label {
+        font-family: 'Pirata';
+        color: var(--mat-tab-header-inactive-label-text-color);
+        display: inline-flex;
+        align-items: center;
+        font-size: 25px;
+    }
+
+    .mat-mdc-tab-header {
+        --mdc-tab-indicator-active-indicator-color: #030041;
+        --mat-tab-header-disabled-ripple-color: rgba(0, 0, 70, 0.6);
+        --mat-tab-header-pagination-icon-color: #cffff0;
+        --mat-tab-header-inactive-label-text-color: rgba(0, 0, 70, 0.6);
+        --mat-tab-header-active-label-text-color: #1b0073;
+        --mat-tab-header-active-ripple-color: #030041;
+        --mat-tab-header-inactive-ripple-color: #030041;
+        --mat-tab-header-inactive-focus-label-text-color: rgba(0, 0, 70, 0.6);
+        --mat-tab-header-inactive-hover-label-text-color: rgba(0, 0, 70, 0.6);
+        --mat-tab-header-active-focus-label-text-color: #030041;
+        --mat-tab-header-active-hover-label-text-color: #030041;
+        --mat-tab-header-active-focus-indicator-color: #030041;
+        --mat-tab-header-active-hover-indicator-color: #030041;
+    }
+
+    .mat-mdc-header-cell {
+        border-bottom-color: var(--mat-table-row-item-outline-color, rgba(0, 0, 0, 0.12));
+        border-bottom-width: var(--mat-table-row-item-outline-width, 1px);
+        border-bottom-style: solid;
+        letter-spacing: var(--mat-table-header-headline-tracking);
+        font-weight: inherit;
+        font-family: 'Pirata';
+        line-height: inherit;
+        font-size: x-large;
+    }
+
+    .mdc-data-table__header-cell {
+        box-sizing: border-box;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        outline: none;
+        text-align: center;
+    }
+}
+
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}

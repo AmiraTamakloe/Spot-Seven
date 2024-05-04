@@ -1,0 +1,54 @@
+<app-page-base-component>
+    <div class="container-creation" *transloco="let t; read: 'create-account-page'">
+        <div class="top-container">
+            <div class="top-bar">
+                <button class="arrow-back" mat-icon-button [routerLink]="['/login']">
+                    <mat-icon>arrow_back</mat-icon>
+                </button>
+                <h1 class="title" data-text="SPOT SEVEN">SPOT SEVEN</h1>
+            </div>
+            <h2>{{t("Création de compte")}}</h2>
+        </div>
+        <div class="form-container">
+            <img src="./assets/logo/logo.png" alt="logo" class="logo" />
+            <form class="form-field" [formGroup]="createAccountForm" (ngSubmit)="onSubmit()">
+                <mat-error *ngIf="usernameAlreadyInUse">{{t("Ce nom d'utilisateur est déja utilisé")}}</mat-error>
+                <label for="username">{{t("Nom d'utilisateur")}}
+                    <mat-error *ngIf="createAccountForm.get('username')?.invalid"><mat-icon class="error-icon"
+                            matTooltip="Veuillez entrer une valeur"
+                            matTooltipPosition="right">error</mat-icon></mat-error>
+                </label>
+                <input type="text" id="username" name="username" formControlName="username" />
+
+                <label for="email">{{t("Courriel")}}
+                    <mat-error *ngIf="createAccountForm.get('email')?.invalid"><mat-icon class="error-icon"
+                            matTooltip="Veuillez entrer une valeur"
+                            matTooltipPosition="right">error</mat-icon></mat-error>
+                </label>
+                <input type="text" id="email" name="email" formControlName="email" />
+
+                <label for="password">{{t("Mot de passe")}}
+                    <mat-error *ngIf="createAccountForm.get('password')?.invalid"><mat-icon class="error-icon"
+                            [matTooltip]="showPasswordError()" matTooltipPosition="right">error</mat-icon></mat-error>
+                </label>
+                <input type="password" id="password" name="password" formControlName="password" />
+                <label for="password confirmation">{{t("Réécrivez votre mot de passe")}}</label>
+                <input type="password" id="password-confirmation" name="password-confirmation"
+                    formControlName="passwordConfirmation" />
+                <mat-error *ngIf="createAccountForm.hasError('notSame')">{{t("Le mot de passe n'est pas le
+                    même")}}</mat-error>
+                    <div class="avatar-selection">
+                    <label>{{t("Choisir un avatar")}}</label>
+                    <div class="avatar-options">
+                        <ng-container *ngFor="let avatar of avatarOptions">
+                            <img [src]="'./assets/avatar/' + avatar" (click)="selectAvatar(avatar)" class="avatar-image"
+                                [class.selected]="avatar === selectedAvatar" />
+                        </ng-container>
+                    </div>
+                </div>
+
+                <input type="submit" [value]="t('CRÉER UN NOUVEAU COMPTE')" [disabled]="!createAccountForm.valid" />
+            </form>
+        </div>
+    </div>
+</app-page-base-component>

@@ -1,0 +1,22 @@
+<div class="side-nav-container">
+  <div class="side-nav" *transloco="let t; read: 'side-nav'">
+    <mat-nav-list>
+      <mat-list-item>
+        <mat-icon matListIcon>account_circle</mat-icon>
+        <a matLine href="/settings">{{t('Info du compte')}}</a>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon matListIcon>settings</mat-icon>
+        <a matLine href="/settings">{{t('Preferences')}}</a>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon matListIcon>history</mat-icon>
+        <a matLine href="/settings">{{t('Historique de compte')}}</a>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon matListIcon>insert_chart</mat-icon>
+        <a matLine href="/settings">{{t('Statistique')}}</a>
+      </mat-list-item>
+    </mat-nav-list>
+  </div>
+</div>

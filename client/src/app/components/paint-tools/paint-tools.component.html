@@ -1,0 +1,61 @@
+<div class="paint-zone" *transloco="let t; read: 'paint-tools'">
+    <p class="title">{{t('OUTILS')}}</p>
+    <div class="buttons">
+        <button class="button" (click)="paintService.setMode(modes.Pencil)">{{t('DESSINER')}}
+            <img src="./assets/images-buttons/pencil.png" alt="pencil" title="Pencil image from flaticon.com" />
+        </button>
+
+        <button class="button" (click)="paintService.setMode(modes.Eraser)">{{t('EFFACER')}}
+            <img src="./assets/images-buttons/eraser.png" alt="eraser" title="Eraser image from flaticon.com" />
+        </button>
+
+        <button class="button" (click)="paintService.setMode(modes.Rectangle)">{{t('RECTANGLE')}}
+            <img src="./assets/images-buttons/drawRectangle.png" alt="rectangle"
+                title="Rectangle image from flaticon.com" />
+        </button>
+
+        <button class="button" (click)="paintService.setMode(modes.Ellipse)">{{t('ELLIPSE')}}
+            <img src="./assets/images-buttons/drawEllipse.png" alt="ellipse" title="Ellipse image from flaticon.com" />
+        </button>
+
+        <button class="button" (click)="paintService.setMode(modes.Bucket)">{{t('SEAU')}}
+            <img src="./assets/images-buttons/bucket.png" alt="bucket" title="Bucket image from flaticon.com" />
+        </button>
+
+        <button class="button" (click)="paintService.setMode(modes.AirBrush)">{{t('CANETTE')}}
+            <img src="./assets/images-buttons/spray.png" alt="airbrush" title="Airbrush image from flaticon.com" />
+        </button>
+
+        <button class="button" (click)="paintService.randomGenerator()">{{t('ALEATOIRE')}}
+            <img src="./assets/images-buttons/dice.png" alt="dé" title="Dé image from flaticon.com" />
+        </button>
+
+        <button class="button" [disabled]="!paintService.canRedo()" (click)="paintService.redo()">{{t('REFAIRE')}}
+            <img src="./assets/images-buttons/redo.png" alt="redo" title="Redo image from flaticon.com" />
+        </button>
+
+
+        <button class="button" [disabled]="!paintService.canUndo()" (click)="paintService.undo()">{{t('ANNULER')}}
+            <img src="./assets/images-buttons/undo.png" alt="undo" title="Undo image from flaticon.com" />
+        </button>
+
+        <div class="color">
+            <input type="color" (change)="paintService.changeColor($event)">
+        </div>
+
+
+        <div class="size">
+            <select (change)="paintService.changeRadius($event)">
+                <optgroup [label]="t('Choisissez une taille de pinceau')"></optgroup>
+                <option value="1">1</option>
+                <option value="3">3</option>
+                <option value="5" selected>5</option>
+                <option value="10">10</option>
+            </select>
+        </div>
+
+        <div class="intervert">
+            <button class="intervert-button" (click)="paintService.intervert()">{{t('Inverser les Canvas')}} </button>
+        </div>
+    </div>
+</div>

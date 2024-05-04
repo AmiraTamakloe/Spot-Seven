@@ -1,0 +1,40 @@
+<div class="chat_window" *transloco="let t; read: 'chat-panel'">
+    <div class="header">
+      <h3>{{header}}</h3>
+    </div>
+    <div class="content">
+      <div [ngSwitch]="state" class="main">
+        <div *ngSwitchCase="'create'" id="create">
+            <app-create-chat (switchToJoinedEvent)="switchToJoined()"></app-create-chat>
+        </div>
+        <div *ngSwitchCase="'convo'" id="convo">
+            <app-convo [chatId]="chatId" [chatname]="chatname"></app-convo>
+        </div>
+        <div *ngSwitchCase="'joined'" id="'joined'">
+          <li *ngFor="let chat of chatService.joinedChats" class="chat_list">
+              <app-chat-bubble-bar [chatId]="chat.chatId" [chatName]="chat.chatname" (click)="onConvoClicked(chat.chatId, chat.chatname)" class="chat_bubble"></app-chat-bubble-bar>
+              <button *ngIf="chat.isQuittable" (click)="quitConvo(chat.chatId )" class="quit_button">{{'X'}}</button>
+          </li>
+        </div>
+        <div *ngSwitchDefault>
+          <li *ngFor="let chat of chatService.joinableChats" class="chat_list">
+            <app-chat-bubble-bar [chatId]="chat.chatId" [chatName]="chat.chatname" (click)="onConvoClicked(chat.chatId, chat.chatname)" class="chat_bubble"></app-chat-bubble-bar>
+          </li>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="user-info" *ngIf="state==='convo'">
+        <button (click)="switchToJoined()">{{t('Retour')}}</button>
+      </div>
+      <div *ngIf="state!=='convo'" class="footer-buttons">
+        <div class="switch-button">
+          <button (click)="switchChats()">{{t('Switch')}}</button>
+        </div>
+        <div *ngIf="state!=='create'" class="create-button">
+          <button (click)="switchToCreate()">{{t('Créer')}}</button>
+        </div>
+      </div>
+    </div>    
+  </div>
+  

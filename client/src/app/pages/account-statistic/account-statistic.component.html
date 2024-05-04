@@ -1,0 +1,25 @@
+<app-page-base-component>
+    <div class="container" *transloco="let t; read: 'statistic'">
+        <div class="top-container">
+            <h1 class="title">{{t("Statistique de compte")}}</h1>
+        </div>
+        <div class="statistic-container">
+            <div class="statistic-card">
+                <h2 class="statistic-title">{{t("Nombre de parties jouées")}}</h2>
+                <p class="statistic-value">{{userStatistics.gamesPlayed}}</p>
+            </div>
+            <div class="statistic-card">
+                <h2 class="statistic-title">{{t("Nombre de parties gagnées")}}</h2>
+                <p class="statistic-value">{{userStatistics.gamesWon}}</p>
+            </div>
+            <div class="statistic-card">
+                <h2 class="statistic-title">{{t("Moyenne de différences trouvées par partie")}}</h2>
+                <p class="statistic-value">{{userStatistics.averageScore}}</p>
+            </div>
+            <div class="statistic-card">
+                <h2 class="statistic-title">{{t("Temps moyen par partie")}}</h2>
+                <p class="statistic-value">{{userStatistics.averageTime}}</p>
+            </div>
+        </div>
+    </div>
+</app-page-base-component>

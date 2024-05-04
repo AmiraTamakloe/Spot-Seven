@@ -1,0 +1,22 @@
+<div [ngClass]="themeService.themeSignal()" class="container-GSP" *transloco="let t; read: 'game-selection-panel'">
+    <h1 *ngIf="!gameSelectionService.gamesLoaded" class="loading-text">{{t('CHARGEMENT...')}}</h1>
+    <div *ngIf="gameSelectionService.gamesLoaded && gameSelectionService.gamesToRender.length > 0"
+        class="game-sheet-container">
+        <div class="game-sheet" *ngFor="let game of this.gameSelectionService.gamesToRender; trackBy: id">
+            <app-game-sheet [game]="game" [isConfig]="isConfig" class="game-sheet"></app-game-sheet>
+        </div>
+    </div>
+    <div *ngIf="gameSelectionService.gamesLoaded && gameSelectionService.gamesToRender.length === 0"
+        class="no-games-message">
+        {{t('Aucun jeu disponible')}}
+    </div>
+    <div *ngIf="gameSelectionService.gamesLoaded" class="footer">
+        <app-button icon="keyboard_arrow_left" class="navigation" (click)="gameSelectionService.previous()"
+            [isDisabled]="gameSelectionService.isFirstPage()">{{t('PRÉCÉDENT')}}</app-button>
+
+        <app-button icon="home" class="back-button" routerLink="/home">{{t("PAGE D'ACCUEIL")}}</app-button>
+
+        <app-button icon="keyboard_arrow_right" class="navigation" (click)="gameSelectionService.next()"
+            [isDisabled]="gameSelectionService.isLastPage()">{{t('SUIVANT')}}</app-button>
+    </div>
+</div>

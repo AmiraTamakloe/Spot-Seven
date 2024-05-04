@@ -1,0 +1,19 @@
+button {
+    background: none;
+    border: none;
+    font-family: 'Pirata';
+    font-size: 110%;
+}
+
+button:focus-within {
+    border-radius: 15px;
+}
+
+button img {
+    width: 30px;
+    height: 30px;
+}
+
+button img:hover {
+    scale: 120%;
+}

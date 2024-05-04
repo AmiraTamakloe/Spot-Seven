@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+    spot-seven:
+        build:
+            context: .
+            target: production
+        ports:
+            - 3000:3000
+        volumes:
+            - uploads:/app/uploads
+            - differences:/app/assets/differences
+            - ./server:/app/server
+        depends_on:
+            - db
+        env_file:
+            - ./server/.env
+        command: npm start
+        restart: always
+
+    db:
+        image: postgres
+        env_file:
+            - ./server/.env
+        ports:
+            - 5432:5432
+volumes:
+    uploads:
+    differences:

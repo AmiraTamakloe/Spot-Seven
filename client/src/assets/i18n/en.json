@@ -1,0 +1,323 @@
+{
+    "login-page": {
+        "Connexion": "Connection",
+        "Nom d'utilisateur": "Username",
+        "Mot de passe": "Password",
+        "SE CONNECTER": "LOG IN",
+        "Mot de passe oublié ?": "Forgot your password?",
+        "CRÉER UN COMPTE": "CREATE AN ACCOUNT",
+        "Ou se connecter avec": "Or log in with",
+        "Nom d'utilisateur ou mot de passe incorrect": "Invalid username or password"
+    },
+    "chat-page": {
+        "Se déconnecter": "Log out",
+        "Envoyer": "Send",
+        "Écrivez-ici": "Write here",
+        "caractères": "characters",
+        "Le message ne doit pas dépasser": "The message cannot exceed",
+        "Créer une nouvelle conversation": "Create a new canal",
+        "Créer": "Create",
+        "Nom de la conversation": "Canal name"
+    },
+    "main-page": {
+        "CONFIGURATION": "CONFIGURATION",
+        "MODE CLASSIQUE": "CLASSIC MODE",
+        "MODE TEMPS LIMITÉ": "TIME LIMITED MODE",
+        "MODE OBSERVATEUR": "OBSERVER MODE",
+        "Ouvrir le chat": "Toggle chat",
+        "Veuillez entrer le mot de passe administrateur": "Please enter the administrator password",
+        "Allez créer quelques jeux :)": "Go create some games :)",
+        "Il n'y a aucun jeu disponible pour le moment.": "There are no games available at the moment. Please try again later."
+    },
+    "create-account-page": {
+        "Création de compte": "Account Creation",
+        "Nom d'utilisateur": "Username",
+        "Courriel": "Email",
+        "Mot de passe": "Password",
+        "Réécrivez votre mot de passe": "Rewrite your password",
+        "Le mot de passe n'est pas le même": "The password is not the same",
+        "CRÉER UN NOUVEAU COMPTE": "CREATE A NEW ACCOUNT",
+        "Ce nom d'utilisateur est déja utilisé": "This username is already used",
+        "Choisir un avatar": "Choose an avatar"
+    },
+    "configuration": {
+        "Supprimer les fiches": "Delete cards",
+        "Réinitialiser les constantes": "Reset constants",
+        "Supprimer les classements": "Delete rankings",
+        "Supprimer les historiques": "Delete history",
+        "REGARDER L'HISTORIQUE DES PARTIES": "WATCH THE GAMES HISTORY",
+        "CREER UN NOUVEAU JEU": "CREATE A NEW GAME",
+        "Voulez-vous vraiment supprimer toutes les fiches ?": "Do you really want to delete all the cards?",
+        "Voulez vous vraiment réinitialiser les scores de tous les jeux ?": "Do you really want to reset the scores of all the games?",
+        "Voulez-vous vraiment supprimer l'historique des parties ?": "Do you really want to delete the games history?"
+    },
+    "create-game-page": {
+        "CRÉEZ VOTRE JEU": "CREATE YOUR GAME",
+        "ATTENTION : Le système accepte seulement des images en format BMP 24-bit de taille 640x480": "WARNING: The system only accepts 24-bit BMP images of size 640x480",
+        "Abandonner": "Give up",
+        "Sélectionnez un rayon d'élargissement": "Select an enlargement radius",
+        "Lancer la validation des différences": "Start the validation of differences"
+    },
+    "game-page": {
+        "Voulez-vous vraiment abandonner ?": "Do you really want to abandon?",
+        "ET": "AND",
+        "différences trouvées": "differences found",
+        "Abandonner la partie": "Give up the game",
+        "Un indice": "hint",
+        "INFORMATIONS": "INFORMATIONS",
+        "Aucun observateur": "No observers",
+        "Observateurs actuels": "Current observers",
+        "Difficulté": "Difficulty",
+        "Mode de jeu": "Game mode",
+        "Indices Restants": "Remaining Hints",
+        "Accueil": "Home",
+        "Sauvegarder la reprise": "Save replay",
+        "Recommencer": "Restart",
+        "Pause": "Pause",
+        "Reprendre": "Resume",
+        "Messages": "Messages",
+        "MODE OBSERVATEUR": "OBSERVATOR MODE"
+    },
+    "time-limited-selection-page": {
+        "Temps Limité 1 Différence": "Time Limited 1 Difference",
+        "Temps Limité Augmenté": "Time Limited Improved",
+        "PAGE D'ACCUEIL": "HOME PAGE"
+    },
+    "user-name": {
+        "Choisissez votre pseudo": "Choose your username",
+        "Pseudo": "Username"
+    },
+    "paint-tools": {
+        "OUTILS": "TOOLS",
+        "DESSINER": "DRAW",
+        "EFFACER": "ERASE",
+        "RECTANGLE": "RECTANGLE",
+        "ELLIPSE": "ELLIPSE",
+        "SEAU": "FILL",
+        "CANETTE": "AIRBRUSH",
+        "REFAIRE": "REDO",
+        "ANNULER": "CANCEL",
+        "ALEATOIRE": "RANDOM",
+        "Inverser les Canvas": "Switch the Canvases",
+        "Choisissez une taille de pinceau": "Choose a brush size"
+    },
+    "loading-modal": {
+        "Chargement...": "Loading..."
+    },
+    "leaderboard": {
+        "TOP 3": "TOP 3",
+        "SOLO": "SOLO"
+    },
+    "image-area": {
+        "Réinitialiser l'arrière plan": "Reset the background",
+        "Réinitialiser l'avant plan": "Reset the foreground",
+        "Dupliquer l'avant plan": "Duplicate the foreground"
+    },
+    "history-modal": {
+        "Date": "Date",
+        "Durée": "Length",
+        "Mode de jeu": "Game mode",
+        "Joueur": "Player"
+    },
+    "game-sheet": {
+        "Supprimer le jeu": "Delete the game",
+        "Réinitialiser les scores": "Reset the scores",
+        "Jouer une partie solo": "Play a classic game",
+        "Créer une partie duel": "Create a duo game",
+        "Joindre une partie duel": "Join a duo game",
+        "différences": "differences",
+        "Voulez-vous vraiment supprimer ce jeu ?": "Do you really want to delete this game ?",
+        "Voulez vous vraiment réinitialiser les scores de ce jeu ?": "Do you really want to reset the scores of this game ?",
+        "Jouer en mode multi-joueur": "Play in Multiplayer mode",
+        "Jouer en équipe": "Play in team mode"
+    },
+    "constants": {
+        "Voulez-vous vraiment réinitialiser les constantes ?": "Do you really want to reset the constants ?"
+    },
+    "game-selection-panel": {
+        "CHARGEMENT...": "LOADING...",
+        "PRÉCÉDENT": "BACK",
+        "SUIVANT": "NEXT",
+        "PAGE D'ACCUEIL": "WELCOME PAGE",
+        "Aucun jeu disponible": "NO GAMES AVAILABLE"
+    },
+    "game-constants-modal": {
+        "Constantes de jeu": "Game constants",
+        "Constante": "Constant",
+        "Annuler": "Cancel",
+        "Confirmer": "Confirm"
+    },
+    "error-modal": {
+        "Erreur": "Error",
+        "Une erreur a été rencontrée": "An error was encountered",
+        "Retourner au menu principal": "Return to main menu"
+    },
+    "music-modal": {
+        "Select Your Victory Music": "Select Your Victory Music",
+        "Your current music is :": "Your current music is :",
+        "Disclaimer : We only accept mp3 files": "Disclaimer : We only accept mp3 files",
+        "Televerser une musique": "Upload a music",
+        "Save New Music": "Save New Music"
+    },
+    "differences-preview-modal": {
+        "Il y a": "There is",
+        "différences": "differences",
+        "Donnez un nom au jeu": "Give a name to this game",
+        "Nom du jeu": "Name of game",
+        "Il faut entre 3 et 9 différences": "You need 3 to 9 differences",
+        "Modifier les images": "Modify the images",
+        "Créer le jeu": "Create the game",
+        "Confirmation": "Confirmation",
+        "Annuler": "Cancel",
+        "Confirmer": "Confirm"
+    },
+    "confirm-modal": {
+        "Confirmation": "Confirmation",
+        "Annuler": "Cancel",
+        "Confirmer": "Confirm"
+    },
+
+    "user-profile-dropdown-component": {
+        "Se-déconnecter": "Log Out",
+        "Statistique": "Statistics",
+        "Amis": "Friends",
+        "Paramètres": "Parameters",
+        "Accueil": "Home",
+        "Rejeu": "Replay",
+        "Bienvenue": "Welcome Back"
+    },
+    "waiting-room": {
+        "Créer une salle d'attente": "Create a waiting room",
+        "Créer une salle d'attente amis seulement": "Create a friends-only waiting room",
+        "Créer une salle d'attente amis et leurs amis": "Create a waiting room with my friends and their friends",
+        "PAGE D'ACCUEIL": "HOME PAGE",
+        "Rejoindre cette salle d'attente": "Join this waiting room",
+        "Salle d'attente pleine": "Waiting room full",
+        "Salle créée par": "Room created by:",
+        "Joueurs": "Players:",
+        "Salles d'attente pour Mode Temps Limite": "Waiting rooms for Limited Time Mode",
+        "Salles d'attente pour Mode Temps Limite Augmenté": "Waiting rooms for Limited Time Improved Mode",
+        "Salles d'attente pour Mode Classique en équipe du jeu": "Waiting rooms for Classic Mode in teams for the game",
+        "Salles d'attente pour Mode Classique du jeu": "Waiting rooms for Classic Mode for the game",
+        "Partie de type: Amis seulement": "Game type: Friends only",
+        "Partie de type: Amis et amis d'amis": "Game type: Friends and friends of friends",
+        "Ma Salle d'attente": "My Waiting Room",
+        "Quitter cette salle d'attente": "Leave this waiting room",
+        "Annuler la partie": "Cancel the game",
+        "Lancer la partie": "Start game"
+    },
+    "avatar": {
+        "Paramètres de compte": "Account settings",
+        "Nom d'utilisateur": "Username",
+        "Avatar": "Avatar",
+        "Téleverser un avatar": "Upload an avatar",
+        "Sauvegarder": "Save",
+        "Ceci est votre avatar actuel": "This is your current avatar",
+        "Seules les images PNG sont acceptées": "Only PNG images are accepted",
+        "Déconnecter le compte": "You have been disconnected from your account because you have changed your username. Please log in using your new username.",
+        "Erreur": "Error",
+        "Bravo": "Congratulations",
+        "Info sauvegarder": "Your information has been successfully updated. ",
+        "Essayez peut-être un nouveau nom d'utilisateur ?": "Maybe try a new username ?",
+        "mise à jour avec succès": "Your information has been successfully updated. "
+    },
+    "statistic": {
+        "Statistique de compte": "Account statistics",
+        "Nombre de parties jouées": "Number of games played",
+        "Nombre de parties gagnées": "Number of games won",
+        "Moyenne de différences trouvées par partie": "Average number of differences found per game",
+        "Temps moyen par partie": "Average time per game"
+    },
+    "replays-list": {
+        "Reprises publiques": "Public replays",
+        "Mes reprises": "My replays"
+    },
+    "side-nav": {
+        "Info du compte": "Account info",
+        "Preferences": "Preferences",
+        "Historique de compte": "Account history",
+        "Statistique": "Statistics"
+    },
+    "chat-panel": {
+        "Retour": "Back",
+        "Switch": "Switch",
+        "Créer": "Create",
+        "Canaux Joignables": "Joinable Channels",
+        "Créer un Canal": "Create a Channel",
+        "Vos Canaux": "Your Channels"
+    },
+    "convo": {
+        "Le message ne doit pas dépasser": "The message cannot exceed",
+        "caractères": "characters",
+        "Envoyer": "Send"
+    },
+    "create-chat": {
+        "Créer une nouvelle conversation": "Create a new conversation",
+        "Le nom du canal ne doit pas dépasser": "The channel name cannot exceed",
+        "caractères": "characters",
+        "Créer": "Create"
+    },
+    "friend-card": {
+        "Voir amis": "View friends",
+        "Bloquer": "Block",
+        "Supprimer": "Remove",
+        "Ajouter": "Add",
+        "Accepter": "Accept",
+        "Refuser": "Refuse",
+        "Supprimer la demande": "Delete request",
+        "Débloquer": "Unblock"
+    },
+    "friend-list": {
+        "Trouvez un joueur...": "Search users ..."
+    },
+    "friend-list-modal": {
+        "Amis de ": "Friends of "
+    },
+    "load-image-button": {
+        "Charger une image en arrière plan des 2 zones": "Load an image in the background of the 2 areas",
+        "Charger une image en arrière plan": "Load an image in the background"
+    },
+    "user-modal-card": {
+        "Ajouter": "Add"
+    },
+    "replay-list": {
+        "Joueur": "Player",
+        "Jeu": "Game",
+        "Date de jeu": "Game date",
+        "Revoir la partie": "Replay the game",
+        "Revoir": "Replay",
+        "Visibilité": "Visibility",
+        "Supprimer la reprise": "Delete the replay",
+        "Supprimer": "Delete"
+    },
+    "modal": {
+        "La partie est terminée": "The game has ended",
+        "Accueil": "Home",
+        "Revoir la partie": "Replay the game",
+        "Jouez en mode temps limité": "Play in time-limited mode",
+        "Soyez rapide...le temps s'écoule!": "Be quick... time is ticking!",
+        "Jeu Solo": "Single Player Game",
+        "Jeu Multijoueur": "Multiplayer Game"
+    },
+    "classic-mode": {
+        "Votre adversaire a abandonné la partie. Vous avez gagné!": "Your opponent has forfeited the game. You won!",
+        "Vous avez gagné le jeu! Vous avez légalement le droit de claim le titre de légende du jeu des 7 différences.": "You won the game! You are now legally entitled to claim the title of legend of the 7 differences game.",
+        "Votre adversaire a gagné. Meilleure chance la prochaine fois.": "Your opponent won. Better luck next time.",
+        "Vous avez gagné le jeu! Vous êtes maintenant en": "You won the game! You are now in position",
+        "position sur le leaderboard!": "on the leaderboard!",
+        "La reprise vidéo est terminée.": "The video replay has ended."
+    },
+    "time-limited-mode": {
+        "Vous avez gagné le jeu! Vous avez légalement le droit de claim le titre de légende du jeu des 7 différences.": "You won the game! You are now legally entitled to claim the title of legend of the 7 differences game.",
+        "Le temps est écoulé vous avez perdu ! Get good": "Time is up, you lost! Get good."
+    },
+    "observer-game-session": {
+        "Mode Observateur: Parties de jeu en cours": "Observer mode: Ongoing game sessions",
+        "PAGE D'ACCUEIL": "HOME PAGE",
+        "Partie en cours du jeu": "Ongoing game sessions",
+        "Observateur présent": "Observer present",
+        "Observateurs actuels": "Current observers",
+        "Aucun observateur": "No observer",
+        "Observer la partie": "Observe the game session"
+    }
+}

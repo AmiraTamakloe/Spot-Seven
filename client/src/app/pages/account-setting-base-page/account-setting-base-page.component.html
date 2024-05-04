@@ -1,0 +1,7 @@
+<div [ngClass]="themeService.themeSignal()" class="wrapper">
+    <app-navbar class="navbar"></app-navbar>
+    <div class="content-container">
+        <app-account-sidebar class="sidebar"></app-account-sidebar>
+        <ng-content class="content"></ng-content>
+    </div>
+</div>

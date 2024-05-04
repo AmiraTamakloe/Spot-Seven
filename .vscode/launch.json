@@ -1,0 +1,45 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "1.0.0",
+    "configurations": [
+        {
+            "name": "Debug server (Attach)",
+            "port": 9229,
+            "request": "attach",
+            "skipFiles": ["<node_internals>/**"],
+            "restart": true,
+            "sourceMaps": true,
+            "localRoot": "${workspaceFolder}/server",
+            "type": "node"
+        },
+        {
+            "name": "Launch Client With Debug",
+            "request": "launch",
+            "type": "chrome",
+            "url": "http://localhost:4200",
+            "webRoot": "${workspaceFolder}/client"
+        },
+        {
+            "name": "Debug Docker Compose",
+            "type": "node",
+            "request": "attach",
+            "restart": true,
+            "port": 9229,
+            "address": "0.0.0.0",
+            "sourceMaps": true,
+            "localRoot": "${workspaceFolder}/server",
+            "remoteRoot": "/app/server",
+            "skipFiles": ["<node_internals>/**"]
+        },
+        {
+            "name": "Run client leger",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "debug",
+            "args": ["--dart-define=BASE_URL=http://10.200.49.186:3000", "--dart-define=IS_PRODUCTION=false"],
+            "program": "${workspaceFolder}/client_leger/lib/main.dart"
+        }
+    ]
+}

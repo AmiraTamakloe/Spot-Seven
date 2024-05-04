@@ -1,0 +1,28 @@
+<div *transloco="let t; read: 'music-modal'">
+    <p class="title" mat-dialog-title>{{t('Select Your Victory Music')}}</p>
+    <div mat-dialog-content>
+        <p class="subtitle">{{t('Your current music is :')}} {{ data.selectedMusic }}</p>
+        <div *ngFor="let option of data.musicOptions">
+            <ng-container *ngIf="option.label !== 'UPLOAD'; else fileUploadButton">
+                <button class="regular-button" mat-button (click)="selectMusicOption(option)">
+                    <i class="{{ option.icon }}"></i> {{ option.label }}
+                </button>
+            </ng-container>
+        </div>
+
+        <ng-template #fileUploadButton>
+            <label for="upload-input" class="upload-music-btn">
+                <input style="display: none" type="file" accept="audio/mpeg" (change)="onFileSelected($event)"
+                    #hiddenfileinput>
+                <button type="button" (click)="hiddenfileinput.click()" class="upload-music-btn">     
+                       <i class="fa-solid fa-upload"></i>  {{t('Televerser une musique')}}</button>
+            </label>
+        </ng-template>
+        <div>
+            <p class="disclaimer">{{t('Disclaimer : We only accept mp3 files')}}</p>
+        </div>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button (click)="saveAndClose()" class="Save">{{t('Save New Music')}}</button>
+    </div>
+</div>

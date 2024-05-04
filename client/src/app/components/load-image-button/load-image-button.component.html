@@ -1,0 +1,3 @@
+<!-- Inspired by https://blog.angular-university.io/angular-file-upload/ -->
+<input #imageInput id="imageInput" type="file" [accept]="'.bmp'" (change)="onImageSelected($event)" hidden>
+<button class="load" mat-raised-button (click)="onButtonClick()">{{ buttonLabel }}</button>

@@ -1,0 +1,42 @@
+<div class="menu-row" *transloco="let t; read: 'user-profile-dropdown-component'">
+    <div class="menu-header">
+        <div class="menu-trigger-container">
+        <button class="main-button"  mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>home</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu" class="user-profile">
+            <button mat-menu-item routerLink="/home">
+                <mat-icon>home</mat-icon>
+                <span>{{t('Accueil')}}</span></button>
+            <button mat-menu-item routerLink="/avatar">
+                <mat-icon>settings</mat-icon>
+                <span>{{t('Paramètres')}}</span>
+            </button>
+            <button mat-menu-item routerLink="/friends">
+                <mat-icon>people</mat-icon>
+                <span>{{t("Amis")}}</span>
+            </button>
+            <button mat-menu-item routerLink="/statistic">
+                <mat-icon>insert_chart</mat-icon>
+                <span>{{t('Statistique')}}</span>
+            </button>
+            <button mat-menu-item routerLink="/replays">
+                <mat-icon>repeat</mat-icon>
+                <span>{{t('Rejeu')}}</span></button>
+            <mat-divider></mat-divider>
+            <div class="menu-footer">
+                <button mat-flat-button dense (click)="logout()">
+                    <mat-icon>logout</mat-icon>
+                    <span>{{t('Se-déconnecter')}}</span>
+                </button>
+            </div>
+        </mat-menu>
+        </div>
+        <div class="avatar-info">
+                <p>{{t('Bienvenue')}}</p>
+                <h6 class="name">{{username}}</h6>
+                <img [src]="currentAvatar" alt="User Avatar" class="user-avatar">
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,64 @@
+name: client_leger
+description: 'A new Flutter project.'
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+    sdk: '>=3.2.5 <4.0.0'
+
+dependencies:
+    google_sign_in: ^6.2.1
+    font_awesome_flutter: ^10.7.0
+    flutter:
+        sdk: flutter
+    email_validator: ^2.1.17
+    firebase_core: ^2.25.3
+    firebase_auth: ^4.17.3
+    http: ^1.2.0
+    dotenv: ^4.2.0
+    env_variables: ^1.0.1
+    dart_jsonwebtoken: ^2.12.2
+    http_interceptor: ^2.0.0-beta.8
+    provider: ^6.1.1
+    socket_io_client: ^2.0.3+1
+    get: ^4.6.6
+    flutter_localizations:
+        sdk: flutter
+    intl: ^0.18.1
+    shared_preferences: ^2.0.13
+    carousel_slider: ^4.2.1
+    smooth_page_indicator: ^1.1.0
+    chat_bubbles: ^1.5.0    
+    events_emitter: ^0.5.2
+    audioplayers: ^5.2.1
+    in_app_notification: ^1.1.2
+    file_picker: ^8.0.0+1
+    image: ^4.1.7
+    image_picker: ^0.8.4+4
+
+dev_dependencies:
+    flutter_test:
+        sdk: flutter
+    flutter_lints: ^3.0.1
+
+flutter:
+    generate: true
+    uses-material-design: true
+    assets:
+        - assets/logo/logo.png
+        - assets/logo/google_logo.png
+        - assets/victory-music/goodresult.mp3
+        - assets/victory-music/levelwin.mp3
+        - assets/victory-music/medievalfanfare.mp3
+        - assets/victory-music/successtrumpets.mp3
+        - assets/victory-music/tadaa.mp3
+        - assets/audio/good.mp3
+        - assets/audio/wrong.mp3
+        - assets/avatar/avatar1.png
+        - assets/avatar/avatar2.png
+        - assets/avatar/avatar3.png
+        - assets/avatar/avatar4.png
+    fonts:
+        - family: Pirata
+          fonts:
+              - asset: fonts/Pirata.ttf

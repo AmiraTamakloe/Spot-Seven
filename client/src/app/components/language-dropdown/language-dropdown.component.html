@@ -1,0 +1,19 @@
+<div class="menu-trigger-container" [ngClass]="themeService.themeSignal()">
+    <button class="my-button" mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon class="language-icon">language</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="languageSelected('fr')">
+            <img src="./assets/images-buttons/france.png" alt="France" />
+            <span> FRANÇAIS</span>
+        </button>
+        <button mat-menu-item (click)="languageSelected('en')">
+            <img src="./assets/images-buttons/united-kingdom.png" alt="United Kingdom" />
+            <span> ENGLISH</span>
+        </button>
+        <button mat-menu-item (click)="languageSelected('es')">
+            <img src="./assets/images-buttons/spain.png" alt="Spain" />
+            <span> ESPAÑOL</span>
+        </button>
+    </mat-menu>
+</div>

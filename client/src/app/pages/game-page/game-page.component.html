@@ -1,0 +1,113 @@
+<div [ngClass]="themeService.themeSignal()" class="container-GP" *transloco="let t; read: 'game-page'">
+    <div class="box-GP">
+        <div class="title">
+
+            <p class="game-name">{{ gameName }}</p>
+            @if(gameService.isObservingPlayer) {
+            <div class="observers-mode">
+                <p class="observers-name">
+                    👀{{t('MODE OBSERVATEUR')}}
+                </p>
+            </div>
+            }
+        </div>
+
+        <div class="time-diff">
+
+            <div class="diff-box"
+                *ngIf="gameService.gameInfo.gameMode === gameMode.Classic || gameService.gameInfo.gameMode === gameMode.ClassicTeam">
+                @if(!gameService.isObservingPlayer) {
+                <h3>{{ gameService.gameInfo.username }}
+                    ({{ gameService.foundDifferences }} / {{ totalDifferences }})</h3>
+                }
+                <h3>
+                    <div *ngIf="gameService.gameInfo.otherPlayersUsername">
+                        <div *ngFor="let username of gameService.gameInfo.otherPlayersUsername">
+                            {{ username }}
+                            ({{ this.gameService.opponentFoundDifferences }} / {{ totalDifferences }})
+                        </div>
+                    </div>
+                </h3>
+            </div>
+
+            <div class="diff-box"
+                *ngIf="gameService.gameInfo.gameMode === gameMode.TimeLimited || gameService.gameInfo.gameMode === gameMode.TimeLimitedImproved">
+                <h3>{{ gameService.isObservingPlayer ? '' : gameService.gameInfo.username }}
+                    <span *ngIf="gameService.gameInfo.otherPlayersUsername">
+                        <span *ngFor="let username of gameService.gameInfo.otherPlayersUsername">
+                            {{ username }}, </span>
+                    </span>
+                </h3>
+                <h3>{{ gameService.foundDifferences }} {{t('différences trouvées')}}</h3>
+            </div>
+
+            <app-timer [gameService]="gameService" #timer class="timer"></app-timer>
+
+        </div>
+
+        <div class="images">
+            <app-image-area-game [imageArea]="areas.ORIGINAL" [gameService]="gameService"></app-image-area-game>
+            <app-image-area-game [imageArea]="areas.MODIFIED" [gameService]="gameService"></app-image-area-game>
+        </div>
+
+        <div class="buttons-container" *ngIf="!classicModeService || !classicModeService.replayInstance">
+            <app-chat-panel *ngIf="showChatWindow"></app-chat-panel>
+            <button  (click)="toggleChatWindow()" id="chat_button">
+                <i class="fas fa-comments"></i>
+            </button>
+            <app-button class="button" icon="mood_bad" (click)="giveUp()">{{t('Abandonner la partie')}}</app-button>
+            <app-button class="button" icon="vpn_key" [isDisabled]="!canGetHint()" (click)="getHint()">
+                {{t('Un indice')}}
+            </app-button>
+            <div class="informations">
+                <p class="title-info"> {{t('INFORMATIONS')}} : </p>
+                <p>{{t('Difficulté')}} : {{ gameDifficulty }}</p>
+                <p>{{t('Indices Restants')}} : {{ remainingHints }}</p>
+                @if(!this.gameService.isObservingPlayer) {
+                @if(gameService.observersGameSession) {
+                @if(gameService.observersGameSession.currentObservers) {
+                @if(gameService.observersGameSession.currentObservers.length > 0) {
+                <p>
+                    👀{{t("Observateurs actuels")}} : {{ gameService.observersGameSession.currentObservers.length }}
+                </p>
+                }
+                }
+                }
+                @if(gameService.observersGameSession === undefined || gameService.observersGameSession.currentObservers
+                === undefined ||
+                gameService.observersGameSession.currentObservers.length === 0) {
+                <p>
+                    👀{{t("Aucun observateur")}}</p>
+                }
+                }
+            </div>
+        </div>
+
+        <div class="options" *ngIf="classicModeService && classicModeService.replayInstance">
+            <app-progress-bar [replay]="classicModeService.replayInstance"></app-progress-bar>
+            <div class="buttons-container">
+                <app-button class="button" icon="fast_forward" (click)="classicModeService.replayInstance.speed = 1"
+                    [isDisabled]="classicModeService.replayInstance.speed === 1">X1</app-button>
+                <app-button class="button" icon="fast_forward" (click)="classicModeService.replayInstance.speed = 2"
+                    [isDisabled]="classicModeService.replayInstance.speed === 2">X2</app-button>
+                <app-button class="button" icon="fast_forward" (click)="classicModeService.replayInstance.speed = 4"
+                    [isDisabled]="classicModeService.replayInstance.speed === 4">X4</app-button>
+                <app-button class="button" icon="pause" (click)="classicModeService.replayInstance.pause()"
+                    *ngIf="!classicModeService.replayInstance.isPaused()">{{t('Pause')}}</app-button>
+                <app-button class="button" icon="play_arrow" (click)="classicModeService.replayInstance.resume()"
+                    *ngIf="classicModeService.replayInstance.isPaused()">{{t('Reprendre')}}</app-button>
+                <app-button class="button" icon="replay"
+                    (click)="classicModeService.replayInstance.restart()">{{t('Recommencer')}}</app-button>
+            </div>
+            <div class="buttons-container">
+                <app-button class="button" icon="home"
+                    (click)="classicModeService.quitGamePage()">{{t('Accueil')}}</app-button>
+                @if (!classicModeService.isReplaySaved) {
+                <app-button class="button" icon="save" (click)="classicModeService.saveReplay()">{{t('Sauvegarder la
+                    reprise')}}</app-button>
+                }
+            </div>
+        </div>
+
+    </div>
+</div>

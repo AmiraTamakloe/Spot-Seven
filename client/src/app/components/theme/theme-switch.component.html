@@ -1,0 +1,11 @@
+<div class="theme-control">
+  @if (themeService.themeSignal() === 'dark') {
+  <button (click)="toggleTheme('light')">
+    <img src="./assets/images-buttons/moon.png" alt="dark_mode" />
+  </button>
+  } @else {
+  <button (click)="toggleTheme('dark')">
+    <img src="./assets/images-buttons/brightness.png" alt="light_mode" />
+  </button>
+  }
+</div>

@@ -1,0 +1,20 @@
+<nav *transloco="let t; read: 'navbar'">
+    <div id="left">
+        <img src="./assets/logo/logo.png" alt="logo" class="logo" />
+        <app-user-profile-dropdown *ngIf="isLoggedIn()"></app-user-profile-dropdown>
+    </div>
+    <div id="right">
+        <button *ngIf="!isLoggedIn()" mat-button>
+            <span></span>
+        </button>
+        <span *ngIf="isLoggedIn()">
+            <app-chat-panel *ngIf="showChatWindow"></app-chat-panel>
+            <button class="btn-primary" (click)="toggleChatWindow()" id="chat_button">
+                <i class="fas fa-comments"></i>
+            </button>
+        </span>
+        <app-theme-switch></app-theme-switch>
+        <app-language-dropdown></app-language-dropdown>
+        <app-music-selector *ngIf="isLoggedIn()"></app-music-selector>
+    </div>
+</nav>

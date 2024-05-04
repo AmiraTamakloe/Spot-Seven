@@ -1,0 +1,41 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: aqua;
+    padding: 20px;
+    height: 400px; 
+    width: 400px;
+}
+
+.search-bar {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.scrollable-container {
+    max-height: 300px;
+    overflow-y: auto;
+    width: 100%;
+}
+
+.scrollable-content {
+    padding-right: 40px;
+    margin-top: 20px;
+    overflow-y: auto;
+    width: 100%;
+    padding-left: 50px;
+}
+
+.friend-card {
+    margin-bottom: 20px;
+}

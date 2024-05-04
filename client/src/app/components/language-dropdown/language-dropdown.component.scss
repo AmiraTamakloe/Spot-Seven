@@ -1,0 +1,28 @@
+
+span {
+    font-size: 30px;
+    font-weight: bold;
+    font-family: Pirata;
+    text-align: center; 
+}
+
+img {
+    width: 25px;
+    height: 25px;
+}
+.menu-trigger-container {
+    display: flex;
+    border-bottom: none;
+    align-items: center;
+}
+.my-button {
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: Pirata;
+    text-align: center;
+}
+.my-button:hover {
+    scale: 120%;
+}

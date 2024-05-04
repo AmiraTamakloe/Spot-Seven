@@ -1,0 +1,22 @@
+<div [ngClass]="themeService.themeSignal()" class="container-GS" *transloco="let t; read: 'game-sheet'">
+    <div class="sub-container-GS">
+        <h1 class="name">{{ game.name }}</h1>
+        <h3 class="diff">{{ difficulty }}</h3>
+        <h3 class="diff">{{ game.differencesCount }} {{t('différences')}}</h3>
+    </div>
+
+    <div class="sub-container-GS">
+        <img src="{{ image }}" alt="Image du jeu" class="image" />
+        <app-leaderboard [game]="game"></app-leaderboard>
+    </div>
+
+    <div class="sub-container-GS" *ngIf="isConfig">
+        <button mat-raised-button class="button" (click)="deleteGame()">{{t('Supprimer le jeu')}}</button>
+        <button mat-raised-button class="button" (click)="reinitializeScores()">{{t('Réinitialiser les scores')}}</button>
+    </div>
+    <div class="sub-container-GS" *ngIf="!isConfig">
+        <button mat-raised-button class="button" [routerLink]="['/waiting-room/classic', game._id, game.name]">{{t('Jouer une partie solo')}}</button>
+        <button mat-raised-button class="button"
+            [routerLink]="['/waiting-room/classicTeam', game._id, game.name]">{{t('Jouer en équipe')}}</button>
+    </div>
+</div>

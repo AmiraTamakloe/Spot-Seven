@@ -1,0 +1,11 @@
+<div class="container-FL" *transloco="let t; read: 'friend-list'" >
+    <div class="search-bar-container">
+        <input type="text" [placeholder]="t('Trouvez un joueur...')" class="search-bar" (input)="filterUsers($event)">
+    </div>
+    <div class="scrollable-content" *ngIf="filteredData">
+        <div *ngFor="let item of filteredData; let i = index" class="friend-card">
+            <app-friend-card [friend]="item.user" [status]="pageStatus"
+                [friendshipId]="item.friendshipId"></app-friend-card>
+        </div>
+    </div>
+</div>

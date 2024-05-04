@@ -1,0 +1,14 @@
+<div *transloco="let t; read: 'game-constants-modal'">
+    <h2 mat-dialog-title>{{t('Constantes de jeu')}}</h2>
+    <div md-dialog-content>
+        {{data.constantMessage}}
+        <mat-form-field appearance="fill">
+            <mat-label>{{t('Constante')}}</mat-label>
+            <input type="number" matInput [formControl]="gameConstantsFormControl">
+        </mat-form-field>
+    </div>
+    <div md-dialog-actions>
+        <app-button type="button" (click)="modal.close(false)">{{t('Annuler')}}</app-button>
+        <app-button type="button" [isDisabled]="gameConstantsFormControl.invalid" (click)="modal.close(getValue())">{{t('Confirmer')}}</app-button>
+    </div>
+</div>

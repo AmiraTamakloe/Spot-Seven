@@ -1,0 +1,325 @@
+{
+    "login-page": {
+        "Connexion": "Connexion",
+        "Nom d'utilisateur": "Nom d'utilisateur",
+        "Mot de passe": "Mot de passe",
+        "SE CONNECTER": "SE CONNECTER",
+        "Mot de passe oublié ?": "Mot de passe oublié ?",
+        "CRÉER UN COMPTE": "CRÉER UN COMPTE",
+        "Ou se connecter avec": "Ou se connecter avec",
+        "Nom d'utilisateur ou mot de passe incorrect": "Nom d'utilisateur ou mot de passe invalide"
+    },
+    "chat-page": {
+        "Se déconnecter": "Se déconnecter",
+        "Envoyer": "Envoyer",
+        "Écrivez-ici": "Écrivez-ici",
+        "caractères": "caractères",
+        "Le message ne doit pas dépasser": "Le message ne doit pas dépasser",
+        "Créer une nouvelle conversation": "Créer une nouvelle conversation",
+        "Créer": "Créer",
+        "Nom de la conversation": "Nom de la conversation"
+    },
+    "main-page": {
+        "CONFIGURATION": "CONFIGURATION",
+        "MODE CLASSIQUE": "MODE CLASSIQUE",
+        "MODE TEMPS LIMITÉ": "MODE TEMPS LIMITÉ",
+        "MODE OBSERVATEUR": "MODE OBSERVATEUR",
+        "Ouvrir le chat": "Ouvrir le chat",
+        "Allez créer quelques jeux :)": "Allez créer quelques jeux :)",
+        "Il n'y a aucun jeu disponible pour le moment.": "Il n'y a aucun jeu disponible pour le moment.",
+        "Veuillez entrer le mot de passe administrateur": "Veuillez entrer le mot de passe administrateur",
+        "Mot de passe incorrect": "Mot de passe incorrect",
+        "Veuillez réessayer": "Veuillez réessayer"
+    },
+    "music-modal": {
+        "Select Your Victory Music": "Choisissez votre musique de victoire",
+        "Your current music is :": "Votre musique actuelle est :",
+        "Disclaimer : We only accept mp3 files": "Attention : Nous acceptons seulement les fichiers mp3",
+        "Televerser une musique": "Téléverser une musique",
+        "Save New Music": "Sauvegarder la nouvelle musique"
+    },
+    "create-account-page": {
+        "Création de compte": "Création de compte",
+        "Nom d'utilisateur": "Nom d'utilisateur",
+        "Courriel": "Courriel",
+        "Mot de passe": "Mot de passe",
+        "Réécrivez votre mot de passe": "Réécrivez votre mot de passe",
+        "Le mot de passe n'est pas le même": "Le mot de passe n'est pas le même",
+        "CRÉER UN NOUVEAU COMPTE": "CRÉER UN NOUVEAU COMPTE",
+        "Ce nom d'utilisateur est déja utilisé": "Ce nom d'utilisateur est déja utilisé",
+        "Choisir un avatar": "Choisir un avatar"
+    },
+    "configuration": {
+        "Supprimer les fiches": "Supprimer les fiches",
+        "Réinitialiser les constantes": "Reinitialiser les constantes",
+        "Supprimer les classements": "Supprimer les classements",
+        "Supprimer les historiques": "Supprimer les historiques",
+        "REGARDER L'HISTORIQUE DES PARTIES": "REGARDER L'HISTORIQUE DES PARTIES",
+        "CREER UN NOUVEAU JEU": "CREER UN NOUVEAU JEU",
+        "Voulez-vous vraiment supprimer toutes les fiches ?": "Voulez-vous vraiment supprimer toutes les cartes ?",
+        "Voulez vous vraiment réinitialiser les scores de tous les jeux ?": "Voulez-vous vraiment réinitialiser les scores de tous les jeux ?",
+        "Voulez-vous vraiment supprimer l'historique des parties ?": "Voulez-vous vraiment supprimer l'historique des parties ?"
+    },
+    "create-game-page": {
+        "CRÉEZ VOTRE JEU": "CRÉEZ VOTRE JEU",
+        "ATTENTION : Le système accepte seulement des images en format BMP 24-bit de taille 640x480": "ATTENTION : Le système accepte seulement des images en format BMP 24-bit de taille 640x480",
+        "Abandonner": "Abandonner",
+        "Sélectionnez un rayon d'élargissement": "Sélectionnez un rayon d'élargissement",
+        "Lancer la validation des différences": "Lancer la validation des différences"
+    },
+    "game-page": {
+        "Voulez-vous vraiment abandonner ?": "Voulez-vous vraiment abandonner ?",
+        "ET": "ET",
+        "différences trouvées": "différences trouvées",
+        "Abandonner la partie": "Abandonner la partie",
+        "Un indice": "Un indice",
+        "INFORMATIONS": "INFORMATIONS",
+        "Aucun observateur": "Aucun observateur",
+        "Observateurs actuels": "Observateurs actuels",
+        "Difficulté": "Difficulté",
+        "Mode de jeu": "Mode de jeu",
+        "Indices Restants": "Indices Restants",
+        "Accueil": "Accueil",
+        "Sauvegarder la reprise": "Sauvegarder la reprise",
+        "Recommencer": "Recommencer",
+        "Pause": "Pause",
+        "Reprendre": "Reprendre",
+        "Messages": "Messages",
+        "MODE OBSERVATEUR": "MODE OBSERVATEUR"
+    },
+    "time-limited-selection-page": {
+        "Temps Limité 1 Différence": "Temps Limité 1 Différence",
+        "Temps Limité Augmenté": "Temps Limité Augmenté",
+        "PAGE D'ACCUEIL": "PAGE D'ACCUEIL"
+    },
+    "user-name": {
+        "Choisissez votre pseudo": "Choisissez votre pseudo",
+        "Pseudo": "Pseudo"
+    },
+    "paint-tools": {
+        "OUTILS": "OUTILS",
+        "DESSINER": "DESSINER",
+        "EFFACER": "EFFACER",
+        "RECTANGLE": "RECTANGLE",
+        "ELLIPSE": "ELLIPSE",
+        "SEAU": "SEAU",
+        "CANETTE": "CANETTE",
+        "REFAIRE": "REFAIRE",
+        "ANNULER": "ANNULER",
+        "ALEATOIRE": "ALEATOIRE",
+        "Inverser les Canvas": "Inverser les Canvas",
+        "Choisissez une taille de pinceau": "Choisissez une taille de pinceau"
+    },
+    "loading-modal": {
+        "Chargement...": "Chargement..."
+    },
+    "leaderboard": {
+        "TOP 3": "TOP 3",
+        "SOLO": "SOLO"
+    },
+    "image-area": {
+        "Réinitialiser l'arrière plan": "Réinitialiser l'arrière plan",
+        "Réinitialiser l'avant plan": "Réinitialiser l'avant plan",
+        "Dupliquer l'avant plan": "Dupliquer l'avant plan"
+    },
+    "history-modal": {
+        "Date": "Date",
+        "Durée": "Durée",
+        "Mode de jeu": "Mode de jeu",
+        "Joueur": "Joueur"
+    },
+    "game-sheet": {
+        "Supprimer le jeu": "Supprimer le jeu",
+        "Réinitialiser les scores": "Réinitialiser les scores",
+        "Jouer une partie solo": "Jouer une partie classique",
+        "Créer une partie en équipe": "Créer une partie en équipe",
+        "Joindre une partie duel": "Joindre une partie duel",
+        "différences": "différences",
+        "Voulez-vous vraiment supprimer ce jeu ?": "Voulez-vous vraiment supprimer ce jeu ?",
+        "Voulez vous vraiment réinitialiser les scores de ce jeu ?": "Voulez vous vraiment réinitialiser les scores de ce jeu ?",
+        "Jouer en mode multi-joueur": "Jouer en mode multi-joueur",
+        "Jouer en équipe": "Jouer en équipe"
+    },
+    "game-selection-panel": {
+        "CHARGEMENT...": "CHARGEMENT...",
+        "PRÉCÉDENT": "PRÉCÉDENT",
+        "SUIVANT": "SUIVANT",
+        "PAGE D'ACCUEIL": "PAGE D'ACCUEIL",
+        "Aucun jeu disponible": "AUCUN JEU DISPONIBLE"
+    },
+    "constants": {
+        "Voulez-vous vraiment réinitialiser les constantes ?": "Voulez-vous vraiment réinitialiser les constantes ?"
+    },
+    "game-constants-modal": {
+        "Constantes de jeu": "Constantes de jeu",
+        "Constante": "Constante",
+        "Annuler": "Annuler",
+        "Confirmer": "Confirmer"
+    },
+    "error-modal": {
+        "Erreur": "Erreur",
+        "Une erreur a été rencontrée": "Une erreur a été rencontrée",
+        "Retourner au menu principal": "Retourner au menu principal"
+    },
+    "differences-preview-modal": {
+        "Il y a": "Il y a",
+        "différences": "différences",
+        "Donnez un nom au jeu": "Donnez un nom au jeu",
+        "Nom du jeu": "Nom du jeu",
+        "Il faut entre 3 et 9 différences": "Il faut entre 3 et 9 différences",
+        "Modifier les images": "Modifier les images",
+        "Créer le jeu": "Créer le jeu",
+        "Annuler": "Annuler",
+        "Confirmer": "Confirmer",
+        "Confirmation": "Confirmation"
+    },
+    "confirm-modal": {
+        "Confirmation": "Confirmation",
+        "Annuler": "Annuler",
+        "Confirmer": "Confirmer"
+    },
+    "user-profile-dropdown-component": {
+        "Se-déconnecter": "Se déconnecter",
+        "Statistique": "Statistique",
+        "Amis": "Amis",
+        "Paramètres": "Paramètres",
+        "Accueil": "Accueil",
+        "Rejeu": "Rejeu",
+        "Bienvenue": "Bienvenue"
+    },
+
+    "waiting-room": {
+        "Créer une salle d'attente": "Créer une salle d'attente",
+        "Créer une salle d'attente amis seulement": "Créer une salle d'attente amis seulement",
+        "Créer une salle d'attente amis et leurs amis": "Créer une salle d'attente amis et leurs amis",
+        "PAGE D'ACCUEIL": "PAGE D'ACCUEIL",
+        "Rejoindre cette salle d'attente": "Rejoindre cette salle d'attente",
+        "Salle d'attente pleine": "Salle d'attente pleine",
+        "Salle créée par": "Salle créée par:",
+        "Joueurs": "Joueurs:",
+        "Salles d'attente pour Mode Temps Limite": "Salles d'attente pour Mode Temps Limite",
+        "Salles d'attente pour Mode Temps Limite Augmenté": "Salles d'attente pour Mode Temps Limite Augmenté",
+        "Salles d'attente pour Mode Classique du jeu": "Salles d'attente pour Mode Classique du jeu",
+        "Salles d'attente pour Mode Classique en équipe du jeu": "Salles d'attente pour Mode Classique en équipe du jeu",
+        "Partie de type: Amis seulement": "Partie de type: Amis seulement",
+        "Partie de type: Amis et amis d'amis": "Partie de type: Amis et amis d'amis",
+        "Ma Salle d'attente": "Ma Salle d'attente",
+        "Quitter cette salle d'attente": "Quitter cette salle d'attente",
+        "Annuler la partie": "Annuler la partie",
+        "Lancer la partie": "Lancer la partie"
+    },
+    "avatar": {
+        "Paramètres de compte": "Paramètres de compte",
+        "Nom d'utilisateur": "Nom d'utilisateur",
+        "Avatar": "Avatar",
+        "Téleverser un avatar": "Téleverser un avatar",
+        "Sauvegarder": "Sauvegarder",
+        "Ceci est votre avatar actuel": "Ceci est votre avatar actuel",
+        "Seules les images PNG sont acceptées": "Seules les images PNG sont acceptées",
+        "Déconnecter le compte": "Vous avez été déconnecté de votre compte parce que vous avez changé votre nom d'utilisateur. Veuillez vous reconnecter en utilisant votre nouvel identifiant.",
+        "Erreur": "Erreur",
+        "Bravo": "Bravo",
+        "Info sauvegarder": "Vos informations ont été mises à jour avec succès. ",
+        "Essayez peut-être un nouveau nom d'utilisateur ?": "Essayez peut-être un nouveau nom d'utilisateur ?",
+        "mise à jour avec succès": "Votre information a été mise à jour avec succès. "
+    },
+    "statistic": {
+        "Statistique de compte": "Statistique de compte",
+        "Nombre de parties jouées": "Nombre de parties jouées",
+        "Nombre de parties gagnées": "Nombre de parties gagnées",
+        "Moyenne de différences trouvées par partie": "Moyenne de différences trouvées par partie",
+        "Temps moyen par partie": "Temps moyen par partie"
+    },
+    "replays-list": {
+        "Reprises publiques": "Reprises publiques",
+        "Mes reprises": "Mes reprises"
+    },
+    "side-nav": {
+        "Info du compte": "Information de compte",
+        "Preferences": "Preferences",
+        "Historique de compte": "Historique du compte",
+        "Statistique": "Statistique"
+    },
+    "chat-panel": {
+        "Retour": "Retour",
+        "Switch": "Switch",
+        "Créer": "Créer",
+        "Canaux Joignables": "Canaux Joignables",
+        "Créer un Canal": "Créer un Canal",
+        "Vos Canaux": "Vos Canaux"
+    },
+    "convo": {
+        "Le message ne doit pas dépasser": "Le message ne doit pas dépasser",
+        "caractères": "caractères",
+        "Envoyer": "Envoyer"
+    },
+    "create-chat": {
+        "Créer une nouvelle conversation": "Créer une nouvelle conversation",
+        "Le nom du canal ne doit pas dépasser": "Le nom du canal ne doit pas dépasser",
+        "caractères": "caractères",
+        "Créer": "Créer"
+    },
+    "friend-card": {
+        "Voir amis": "Voir amis",
+        "Bloquer": "Bloquer",
+        "Supprimer": "Supprimer",
+        "Ajouter": "Ajouter",
+        "Accepter": "Accepter",
+        "Refuser": "Refuser",
+        "Supprimer la demande": "Supprimer la demande",
+        "Débloquer": "Débloquer"
+    },
+    "friend-list": {
+        "Trouvez un joueur...": "Trouvez un joueur..."
+    },
+    "friend-list-modal": {
+        "Amis de ": "Amis de "
+    },
+    "load-image-button": {
+        "Charger une image en arrière plan des 2 zones": "Charger une image en arrière plan des 2 zones",
+        "Charger une image en arrière plan": "Charger une image en arrière plan"
+    },
+    "user-modal-card": {
+        "Ajouter": "Ajouter"
+    },
+    "replay-list": {
+        "Joueur": "Joueur",
+        "Jeu": "Jeu",
+        "Date de jeu": "Date de jeu",
+        "Revoir la partie": "Revoir la partie",
+        "Revoir": "Revoir",
+        "Visibilité": "Visibilité",
+        "Supprimer la reprise": "Supprimer la reprise",
+        "Supprimer": "Supprimer"
+    },
+    "modal": {
+        "La partie est terminée": "La partie est terminée",
+        "Accueil": "Accueil",
+        "Revoir la partie": "Revoir la partie",
+        "Jouez en mode temps limité": "Jouez en mode temps limité",
+        "Soyez rapide...le temps s'écoule!": "Soyez rapide...le temps s'écoule!",
+        "Jeu Solo": "Jeu Solo",
+        "Jeu Multijoueur": "Jeu Multijoueur"
+    },
+    "classic-mode": {
+        "Votre adversaire a abandonné la partie. Vous avez gagné!": "Votre adversaire a abandonné la partie. Vous avez gagné!",
+        "Vous avez gagné le jeu! Vous avez légalement le droit de claim le titre de légende du jeu des 7 différences.": "Vous avez gagné le jeu! Vous avez légalement le droit de claim le titre de légende du jeu des 7 différences.",
+        "Votre adversaire a gagné. Meilleure chance la prochaine fois.": "Votre adversaire a gagné. Meilleure chance la prochaine fois.",
+        "Vous avez gagné le jeu! Vous êtes maintenant en": "Vous avez gagné le jeu! Vous êtes maintenant en",
+        "position sur le leaderboard!": "position sur le leaderboard!",
+        "La reprise vidéo est terminée.": "La reprise vidéo est terminée."
+    },
+    "time-limited-mode": {
+        "Vous avez gagné le jeu! Vous avez légalement le droit de claim le titre de légende du jeu des 7 différences.": "Vous avez gagné le jeu! Vous avez maintenant légalement le droit de claim le titre de légende du jeu des 7 différences.",
+        "Le temps est écoulé vous avez perdu ! Get good": "Le temps est écoulé, vous avez perdu ! Améliorez-vous."
+    },
+    "observer-game-session": {
+        "Mode Observateur: Parties de jeu en cours": "Mode Observateur: Parties de jeu en cours",
+        "PAGE D'ACCUEIL": "PAGE D'ACCUEIL",
+        "Partie en cours du jeu": "Partie en cours du jeu",
+        "Observateur présent": "Observateur présent",
+        "Aucun observateur": "Aucun observateur",
+        "Observateurs actuels": "Observateurs actuels",
+        "Observer la partie": "Observer la partie"
+    }
+}

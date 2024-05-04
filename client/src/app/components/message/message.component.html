@@ -1,0 +1,7 @@
+<div [ngClass]="{'from_user_bubble':isFromUser, 'from_other_bubble': !isFromUser }">
+    <p [ngClass]="{'from_user_text':isFromUser, 'from_other_text': !isFromUser }">
+        {{ messageTime }} {{ message.chatMessage.author }} : {{ message.chatMessage.content }}
+    </p>
+</div>
+
+

@@ -1,0 +1,66 @@
+<app-page-base-component>
+    <div class="container" *transloco="let t; read: 'waiting-room'">
+        @if (gameMode === 'timeLimited') {
+        <h1>{{t("Salles d'attente pour Mode Temps Limite")}}</h1>
+        } @else if(gameMode === 'timeLimitedImproved') {
+        {{t("Salles d'attente pour Mode Temps Limite Augmenté")}}
+        } @else if(gameMode === 'classic') {
+        <h1>{{t("Salles d'attente pour Mode Classique du jeu") + ': ' + gameName}}</h1>
+        } @else {
+        {{t("Salles d'attente pour Mode Classique en équipe du jeu") + ': ' + gameName}}
+        }
+        <app-button icon="home" class="back-button" routerLink="/home" (click)="gameStartService.handleQuitPage()" >{{t("PAGE D'ACCUEIL")}}</app-button>
+        <br>
+
+        @if (gameMode === 'timeLimited' || gameMode === 'timeLimitedImproved') {
+        <div class="create-rooms">
+            <button class="custom-button" icon="person"
+                (click)="gameStartService.createTimeLimitedWaitingRoom(gameMode)">
+                <i class="material-icons">person</i>
+                {{t("Créer une salle d'attente")}}</button>
+            <button class="custom-button" icon="people" [disabled]="hasNoFriends()"
+                (click)="gameStartService.createTimeLimitedWaitingRoom(gameMode, friendsOnly)">
+                <i class="material-icons">group</i>
+                {{t("Créer une salle d'attente amis seulement")}}</button>
+            <button class="custom-button" icon="groups" [disabled]="hasNoFriends()"
+                (click)="gameStartService.createTimeLimitedWaitingRoom(gameMode, friendsOfFriends)">
+                <i class="material-icons">groups</i>
+                {{t("Créer une salle d'attente amis et leurs amis")}}</button>
+        </div>
+        } @else {
+        <div class="create-rooms">
+            <button class="custom-button" icon="person"
+                (click)="gameStartService.createClassicWaitingRoom(gameMode, gameId)">
+                <i class="material-icons">person</i>
+                {{t("Créer une salle d'attente")}}</button>
+            <button class="custom-button" icon="people" [disabled]="hasNoFriends()"
+                (click)="gameStartService.createClassicWaitingRoom(gameMode, gameId, friendsOnly)">
+                <i class="material-icons">group</i>
+                {{t("Créer une salle d'attente amis seulement")}}</button>
+            <button class="custom-button" icon="groups" [disabled]="hasNoFriends()"
+                (click)="gameStartService.createClassicWaitingRoom(gameMode, gameId, friendsOfFriends)">
+                <i class="material-icons">groups</i>
+                {{t("Créer une salle d'attente amis et leurs amis")}}</button>
+        </div>
+        }
+
+        <br><br>
+        <div class="waiting-rooms-container">
+            @if(gameMode === 'timeLimited' || gameMode === 'timeLimitedImproved') {
+            @for(room of this.gameStartService.timeLimitWaitingRooms; track room.id) {
+            <div class="waiting-room">
+                <app-waiting-room [waitingRoom]="room" class="waiting-room"></app-waiting-room>
+            </div>
+            }
+            }
+            @if (gameMode==='classic' || gameMode==='classicTeam') {
+            @for(room of this.gameStartService.classicWaitingRooms; track room.id) {
+            <div class="waiting-room">
+                <app-waiting-room [waitingRoom]="room" [gameId]="gameId" class="waiting-room"></app-waiting-room>
+            </div>
+            }
+            }
+        </div>
+
+    </div>
+</app-page-base-component>

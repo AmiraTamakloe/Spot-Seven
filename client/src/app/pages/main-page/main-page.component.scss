@@ -1,0 +1,109 @@
+.container-MP {
+    height: 85%;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 2.5%;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+}
+
+.top-container {
+    align-items: center;
+    justify-content: space-between;
+    width: inherit;
+}
+
+.team-number {
+    font-family: Pirata;
+    font-size: 50pt;
+}
+
+.title-logo-container {
+    justify-content: space-evenly;
+    align-items: center;
+    width: inherit;
+}
+
+.buttons-container {
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.logo {
+    aspect-ratio: 1/1;
+    height: 400px;
+}
+
+.config {
+    align-self: flex-end;
+}
+
+.horizontal {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    font-family: Pirata;
+    height: 10px;
+    font-size: 15pt;
+    justify-self: center;
+    justify-content: space-between;
+    color: white;
+}
+
+.sub-container {
+    display: flex;
+    flex-direction: row;
+}
+
+//inspired code written by Shireen Taj on https://codepen.io/TajShireen/pen/xxGPEEp
+
+h1 {
+    font-size: 100pt;
+    font-family: 'Pirata';
+    color: #C3E0E5;
+    line-height: 1em;
+    text-transform: uppercase;
+    text-align: center;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    margin: 0;
+    position: relative;
+}
+
+h1:before {
+    content: attr(data-text);
+    position: absolute;
+    background: black;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-size: 100% 90%;
+    line-height: 0.9;
+    clip-path: ellipse(110px 110px at -2.54% -9.25%);
+    animation: swing 3s infinite;
+    animation-direction: alternate;
+}
+
+@keyframes swing {
+    0% {
+        -webkit-clip-path: ellipse(110px 110px at -2.54% -9.25%);
+        clip-path: ellipse(110px 110px at -2.54% -9.25%);
+    }
+
+    50% {
+        -webkit-clip-path: ellipse(130px 130px at 49.66% 64.36%);
+        clip-path: ellipse(130px 130px at 49.66% 64.36%);
+
+    }
+
+    100% {
+        -webkit-clip-path: ellipse(110px 110px at 102.62% -1.61%);
+        clip-path: ellipse(110px 110px at 102.62% -1.61%);
+    }
+}

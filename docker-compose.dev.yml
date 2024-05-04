@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+    spot-seven:
+        build:
+            context: .
+            target: development
+        ports:
+            - 3000:3000
+            - 9229:9229
+        volumes:
+            - uploads:/app/uploads
+            - differences:/app/assets/differences
+            - .:/app
+        depends_on:
+            - db
+        env_file:
+            - ./server/.env
+        entrypoint: ['bash', '-c', '/app/server/init.sh']
+
+    db:
+        image: postgres
+        env_file:
+            - ./server/.env
+        volumes:
+            - ./data:/var/lib/postgresql/data
+            - ./init:/docker-entrypoint-initdb.d/
+        ports:
+            - 5432:5432
+volumes:
+    uploads:
+    differences:

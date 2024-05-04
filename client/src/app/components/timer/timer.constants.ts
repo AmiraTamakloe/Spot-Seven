@@ -1,0 +1,1 @@
+export const TIMER_DECREMENTATION_VALUE = -1;

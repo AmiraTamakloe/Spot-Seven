@@ -1,0 +1,224 @@
+image: registry.gitlab.com/nikolayradoev/docker-images/chrome-mongo-node:20233
+
+cache:
+    key: "${CI_COMMIT_REF_SLUG}-client"
+    paths:
+        - client/node_modules/
+        - server/node_modules/
+    policy: pull
+
+.only-client: &only-client
+    only:
+        refs:
+            - master
+            - merge_requests
+        changes:
+            - client/**/*
+            - common/**/*
+    cache:
+        key: "${CI_COMMIT_REF_SLUG}-client"
+        paths:
+            - client/node_modules/
+        policy: pull
+
+.only-server: &only-server
+    only:
+        refs:
+            - master
+            - merge_requests
+        changes:
+            - server/**/*
+            - common/**/*
+    cache:
+        key: "${CI_COMMIT_REF_SLUG}-server"
+        paths:
+            - server/node_modules/
+        policy: pull
+
+stages:
+    - install
+    - lint
+    - test
+    - build
+    - deploy
+    - release
+
+install:client:
+    stage: install
+    <<: *only-client
+    script:
+        - cd client
+        - npm ci --cache .npm --prefer-offline
+    cache:
+        key: "${CI_COMMIT_REF_SLUG}-client"
+        paths:
+            - client/node_modules/
+            - client/.npm/
+        policy: pull-push
+
+install:server:
+    stage: install
+    <<: *only-server
+    script:
+        - cd server
+        - npm ci --cache .npm --prefer-offline
+    cache:
+        key: "${CI_COMMIT_REF_SLUG}-server"
+        paths:
+            - server/node_modules/
+            - server/.npm/
+        policy: pull-push
+
+lint:client:
+    stage: lint
+    needs: ["install:client"]
+    allow_failure: true
+    <<: *only-client
+    script:
+        - cd client
+        - npm ci --cache .npm --prefer-offline
+        - npm run lint
+
+lint:server:
+    stage: lint
+    needs: ["install:server"]
+    allow_failure: true
+    <<: *only-server
+    script:
+        - cd server
+        - npm ci --cache .npm --prefer-offline
+        - npm run lint
+
+test:client:
+    stage: test
+    needs: ["install:client"]
+    <<: *only-client
+    script:
+        - Xvfb :99 -ac -screen 0 1920x1080x24 &
+        - cd client
+        - npm ci --cache .npm --prefer-offline
+        - npm run coverage -- --browsers=ChromeHeadlessNoSandbox --watch=false
+    dependencies:
+        - install:client
+    coverage: '/All files[^|]*\|[^|]*\s+([\d\.]+)/'
+    artifacts:
+        paths:
+            - client/coverage/
+        reports:
+            coverage_report:
+                coverage_format: cobertura
+                path: client/coverage/client/cobertura-coverage.xml
+
+test:server:
+    stage: test
+    needs: ["install:server"]
+    <<: *only-server
+    script:
+        - cd server
+        - npm ci --cache .npm --prefer-offline
+        - npm run coverage
+    dependencies:
+        - install:server
+    coverage: '/All files[^|]*\|[^|]*\s+([\d\.]+)/'
+    artifacts:
+        paths:
+            - server/coverage/
+        reports:
+            coverage_report:
+                coverage_format: cobertura
+                path: server/coverage/cobertura-coverage.xml
+
+build:server:
+    stage: build
+    rules:
+        - if: "$CI_COMMIT_TAG =~ /deploy/"
+        - if: "$CI_COMMIT_TAG =~ /prototype/"
+        - if: "$CI_COMMIT_TAG =~ /release/"
+    image: docker
+    services:
+        - name: docker:dind
+          alias: docker
+    variables:
+        IMAGE_TAG_SPECIFIC: $CI_REGISTRY_IMAGE:$CI_COMMIT_TAG
+        IMAGE_TAG_GLOBAL: $CI_REGISTRY_IMAGE:latest
+        DOCKER_TLS_CERTDIR: "/certs"
+    script:
+        - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+        - docker pull $IMAGE_TAG_GLOBAL || true
+        - docker build --cache-from $IMAGE_TAG_GLOBAL -t $IMAGE_TAG_SPECIFIC -t $IMAGE_TAG_GLOBAL .
+        - docker push $IMAGE_TAG_SPECIFIC
+        - docker push $IMAGE_TAG_GLOBAL
+
+release:heavy_client:
+    stage: release
+    image: registry.gitlab.com/polytechnique-montr-al/log3900/24-1/equipe-103/gitlab-runner-wine
+    rules:
+        - if: "$CI_COMMIT_TAG =~ /deploy/"
+        - if: "$CI_COMMIT_TAG =~ /release/"
+    script:
+        - cd client
+        - npm ci --cache .npm --prefer-offline
+        - npm run build:electron:win
+        - npm run build:electron:macos
+        - npm run build:electron:linux
+        - zip -r release-heavy-client.zip ./build/*
+        - 'curl --header "JOB-TOKEN: $CI_JOB_TOKEN" --upload-file release-heavy-client.zip "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/generic/client_lourd/${CI_COMMIT_TAG}/release-heavy-client.zip"'
+
+    artifacts:
+        paths:
+            - client/build/*
+
+release:light_client:
+    image: instrumentisto/flutter
+    stage: release
+    rules:
+        - if: "$CI_COMMIT_TAG =~ /deploy/"
+        - if: "$CI_COMMIT_TAG =~ /release/"
+    script:
+        - cd client_leger
+        - flutter build apk --dart-define=BASE_URL=https://$DOMAIN_NAME --dart-define=IS_PRODUCTION=true
+        - zip -r release-apk.zip build/app/outputs/apk/release/*
+        - 'curl --header "JOB-TOKEN: $CI_JOB_TOKEN" --upload-file release-apk.zip "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/generic/client_leger/${CI_COMMIT_TAG}/release-apk.zip"'
+    artifacts:
+        paths:
+            - client_leger/release-apk.zip
+
+variables:
+    EC2_USER: ec2-user
+    ORIGIN: "https://gitlab-ci-token:${CI_JOB_TOKEN}@${CI_SERVER_HOST}/${CI_PROJECT_PATH}"
+
+deploy:server:
+    stage: deploy
+    needs: ["build:server"]
+    variables:
+        IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_TAG
+        DOMAIN_NAME: $DOMAIN_NAME
+    rules:
+        - if: "$CI_COMMIT_TAG =~ /deploy/"
+          when: manual
+    trigger:
+        project: polytechnique-montr-al/log3900/24-1/equipe-103/spot-sev-deploy
+
+release:
+    stage: release
+    image: registry.gitlab.com/gitlab-org/release-cli:latest
+    needs:
+        - job: release:heavy_client
+          artifacts: true
+        - job: release:light_client
+          artifacts: true
+    rules:
+        - if: "$CI_COMMIT_TAG =~ /release/"
+          when: manual
+    script:
+        - echo "Running the release job."
+    release:
+        tag_name: $CI_COMMIT_TAG
+        name: "Release $CI_COMMIT_TAG"
+        description: "Release created using the release-cli."
+        assets:
+            links:
+                - name: "Release heavy client"
+                  url: "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/generic/client_lourd/${CI_COMMIT_TAG}/release-heavy-client.zip"
+                - name: "Release light client"
+                  url: "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/generic/client_leger/${CI_COMMIT_TAG}/release-apk.zip"

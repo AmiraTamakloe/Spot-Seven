@@ -1,0 +1,16 @@
+// Based on https://github.com/maximegris/angular-electron/blob/main/tsconfig.serve.json
+{
+    "compilerOptions": {
+        "sourceMap": true,
+        "declaration": false,
+        "moduleResolution": "NodeNext",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "module": "NodeNext",
+        "target": "es2022",
+        "types": ["node"],
+        "lib": ["es2017", "es2016", "es2015", "dom"]
+    },
+    "files": ["main.ts"],
+    "exclude": ["node_modules", "**/*.spec.ts"]
+}

@@ -1,0 +1,11 @@
+<app-page-base-component *transloco="let t; read: 'replays-list'">
+    <mat-tab-group class="container-replay">
+        <mat-tab label="{{t('Reprises publiques')}}">
+            <app-replays-list [replays]="publicReplays" [isUserReplays]="false"></app-replays-list>
+        </mat-tab>
+        <mat-tab label="{{t('Mes reprises')}}">
+            <app-replays-list [replays]="userReplays" [isUserReplays]="true"
+                (changedReplay)="updateUserChangedReplay($event)"></app-replays-list>
+        </mat-tab>
+    </mat-tab-group>
+</app-page-base-component>

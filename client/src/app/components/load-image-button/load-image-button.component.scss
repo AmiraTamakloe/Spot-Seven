@@ -1,0 +1,13 @@
+.load{
+    font-family: Pirata;
+    justify-content: center;
+    background-color: #b6d4ef;
+    margin: 5px;
+}
+
+.load:hover{
+    background-color: #41729F;
+    scale: 105%;
+    margin: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+}

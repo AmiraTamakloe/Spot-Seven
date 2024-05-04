@@ -1,0 +1,17 @@
+button {
+    background: none;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Pirata';
+    font-size: 22px; 
+}
+
+button i {
+    pointer-events: none;
+
+}
+
+button:hover {
+    scale: 120%;
+}

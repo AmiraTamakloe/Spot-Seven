@@ -1,0 +1,13 @@
+<div class="user-card" *transloco="let t; read: 'login-page'">
+    <div class="user">
+        <img [src]="currentAvatar" alt="User Avatar" class="user-avatar">
+        <div class="user-info">
+            <p class="username">{{user.username}}</p>
+        </div>
+    </div>
+    <div class="Actions">
+        <div *ngIf="canInteract">
+            <button class="button" (click)="follow()">{{t('Add')}}</button>
+        </div>
+    </div>
+</div>

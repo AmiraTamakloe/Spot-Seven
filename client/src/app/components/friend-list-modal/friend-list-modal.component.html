@@ -1,0 +1,12 @@
+<div md-dialog-content>
+    <div class="container" *transloco="let t; read: 'friend-list-modal'">
+        <div class="search-bar-container">
+            <h2 mat-dialog-title> {{t('Amis de ')}} {{data.username}} </h2>
+        </div>
+        <div class="scrollable-content">
+            <div *ngFor="let item of data.items" class="friend-card">
+                <app-user-modal-card [user]="item.user" [canInteract]="item.canInteract"></app-user-modal-card>
+            </div>
+        </div>
+    </div>
+</div>

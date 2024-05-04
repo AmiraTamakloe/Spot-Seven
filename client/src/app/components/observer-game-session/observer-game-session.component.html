@@ -1,0 +1,31 @@
+<div class="container" *transloco="let t; read: 'observer-game-session'">
+
+    <div class="game-session">
+        <h1>
+            {{t("Partie en cours du jeu")}}:
+        </h1>
+        <h1 class="game-name">
+            {{observerGameSession.gameName}}
+        </h1>
+    </div>
+
+    <div class="waiting-players">
+        @if(observerGameSession.currentObservers) {
+        @if(observerGameSession.currentObservers.length >= 1) {
+        <h1>
+            <i class="material-icons">search</i>
+            {{t("Observateur présent")}}
+        </h1>
+        }
+        }
+        @if(!observerGameSession.currentObservers || observerGameSession.currentObservers.length === 0) {
+        <h1>
+            {{t("Aucun observateur")}}
+        </h1>
+        }
+    </div>
+
+    <button class="join-button custom-button" (click)="observerService.joinGameSession(observerGameSession.gameRoomId)">
+        <i class="material-icons">group</i>
+        {{t("Observer la partie")}}</button>
+</div>

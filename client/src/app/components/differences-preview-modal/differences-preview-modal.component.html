@@ -1,0 +1,19 @@
+<div *transloco="let t; read: 'differences-preview-modal'">
+    <div mat-dialog-content>
+        <p>{{t('Il y a')}} {{ data.imageInfo.differencesCount }} {{t('différences')}}.</p>
+        <canvas #imageCanvas [attr.width]="width" [attr.height]="heigth"></canvas>
+        <div *ngIf="data.imageInfo.valid">
+            <p>{{t('Donnez un nom au jeu')}}</p>
+            <mat-form-field appearance="fill">
+                <mat-label>{{t('Nom du jeu')}}</mat-label>
+                <input matInput [formControl]="gameNameFormControl">
+            </mat-form-field>
+        </div>
+        <p *ngIf="!data.imageInfo.valid">{{t('Il faut entre 3 et 9 différences')}}.</p>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button (click)="handleCloseClick()">{{t('Modifier les images')}}</button>
+        <button *ngIf="data.imageInfo.valid" type="submit" [disabled]="gameNameFormControl.invalid" mat-button
+            (click)="handleCreateGameClick()">{{t('Créer le jeu')}}</button>
+    </div>
+</div>

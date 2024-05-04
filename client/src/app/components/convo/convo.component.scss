@@ -1,0 +1,45 @@
+.convo {
+    height: 70vh; /* 720px */
+    background-color: #caf0f8;
+    overflow-y: auto;
+    margin-left: 2.5%;
+    width: 33vw;
+    margin-right: 2.5%;
+    margin-bottom: 2.5%; /* 10px */
+    margin-top: 2.5%; /* 10px */
+  }
+  .read {
+    height: 70vh;
+  }
+  .write {
+    height: 9vh;
+    width: 20%;
+  }
+  #input-field {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 6vh; /* 45px */
+    padding: 1vw; /* auto */
+    border: none;
+  }
+  
+  #input-field input {
+    flex: 1; /* Take up remaining space */
+    height: 100%;
+    border: none;
+  }
+  
+  #input-field button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 0.3vw; /* 3px */
+    cursor: pointer;
+    margin-left: 1vw; /* 5px */
+  }
+  
+  #input-field button:hover {
+    background-color: #0056b3;
+  }
+  

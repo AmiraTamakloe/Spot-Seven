@@ -1,0 +1,28 @@
+<div class="user-card" *transloco="let t; read: 'friend-card'">
+    <div class="user">
+        <img [src]="currentAvatar" alt="User Avatar" class="user-avatar">
+        <div class="user-info">
+            <p class="username">{{friend.username}}</p>
+        </div>
+    </div>
+    <div class="Actions">
+        <div *ngIf="status === 'Friends'">
+            <button class="button" mat-button (click)="openDialog()">{{t('Voir amis')}}</button>
+            <button class="button" (click)="block()">{{t('Bloquer')}}</button>
+            <button class="button" (click)="deleteFriend()">{{'Supprimer'}}</button>
+        </div>
+        <div *ngIf="status === 'Users'">
+            <button class="button" (click)="follow()">{{t('Ajouter')}}</button>
+        </div>
+        <div *ngIf="status === 'Invite-Received'">
+            <button class="button" (click)="acceptInvite()">{{t('Accepter')}}</button>
+            <button class="button" (click)="declineInvite()">{{t('Refuser')}}</button>
+        </div>
+        <div *ngIf="status === 'Invite-Send'">
+            <button class="button" (click)="unsendInvite()">{{('Supprimer la demande')}}</button>
+        </div>
+        <div *ngIf="status === 'Blocked'">
+            <button class="button" (click)="unblock()">{{t('Débloquer')}}</button>
+        </div>
+    </div>
+</div>

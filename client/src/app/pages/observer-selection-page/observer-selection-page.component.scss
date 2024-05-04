@@ -1,0 +1,43 @@
+.game-session {
+    justify-self: center;
+    align-self: center;
+    height: inherit;
+    width: inherit;
+}
+
+.game-session-container {
+    padding: 10pt;
+    display: grid;
+    grid-template:
+        'grid-sheet1 grid-sheet2'
+        'grid-sheet3 grid-sheet4';
+    grid-template-columns: 1fr 1fr;
+    grid-row: 1fr 1fr;
+    width: 100%;
+    height: 100%;
+    user-select: none;
+}
+
+h1 {
+    font-size: 30pt;
+    font-family: 'Pirata';
+    color: black;
+    line-height: 1em;
+    text-transform: uppercase;
+    text-align: center;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    margin: 0;
+    position: relative;
+    border-color: black;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    background-color: beige;
+}

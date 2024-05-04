@@ -1,0 +1,8 @@
+<div *transloco="let t; read: 'differences-preview-modal'">
+    <h2 class="title"  mat-dialog-title>{{t('Confirmation')}}</h2>
+    <div class="content" md-dialog-content>{{data.confirmMessage}}</div>
+    <div md-dialog-actions>
+        <app-button type="button" (click)="modal.close(false)">{{t('Annuler')}}</app-button>
+        <app-button type="button" (click)="modal.close(true)">{{t('Confirmer')}}</app-button>
+    </div>
+</div>

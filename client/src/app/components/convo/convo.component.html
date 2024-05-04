@@ -1,0 +1,24 @@
+<div class="convo" *transloco="let t; read: 'convo'">
+    <div #messagesDiv class="event-display">
+        
+        <div class="read">
+            <app-message #messagesList [message]="message" [userId]="chatService.userId"
+                *ngFor="let message of chatService.messages; trackBy: trackByMessage">
+            </app-message>
+        </div>
+        <div class="write">
+            <form class="field">
+                <fieldset id="input-field">
+                    @if (messageContent.length > maxMessageLength) {
+                    <p>{{t("Le message ne doit pas dépasser")}} {{ maxMessageLength}} {{t('caractères')}}.</p>
+                    }
+                    <input size="70" #messageInput [(ngModel)]="messageContent" name="inputField" type="text"
+                        maxlength="maxMessageLength" (keyup)="handleKeyUp($event)" id="message-enter">
+                    <button (click)="submitMessage()" >
+                        <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                    </button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>

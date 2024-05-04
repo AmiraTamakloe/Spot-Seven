@@ -1,0 +1,44 @@
+@startuml
+actor ":Joueur" as player
+box "Client"
+participant ":CreateAccountPage" as createAccountPage
+participant ":AccountService" as accountService
+end box
+
+
+box "Serveur"
+participant ":AuthenticationController" as authController
+participant ":AuthenticationService" as authService
+participant ":UserService" as userService
+end box
+database ":Base de données" as db
+
+
+activate createAccountPage
+createAccountPage -> accountService: createAccount(userInfo)
+activate accountService
+
+accountService -> authController: postCreateAccountRequest(userInfo)
+activate authController
+
+authController -> authService: signUp(userInfo)
+activate authService
+
+authService -> userService: getUser(username)
+activate userService
+authService <-- userService: user
+deactivate userService
+
+alt user existe
+    accountService <-- userService: throwHttpException()
+    createAccountPage <- accountService: Affiche message d'erreur
+else user n'existe pas
+    authService -> userService: createUser(userInfo)
+    activate userService
+    accountService <-- userService: user créé
+    deactivate userService
+    deactivate authService
+    deactivate authController
+    createAccountPage <- accountService: Redirige vers page de login
+end
+@enduml
